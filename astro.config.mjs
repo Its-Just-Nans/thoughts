@@ -2,5 +2,5 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-    base: "/thoughts",
+    base: import.meta.env.DEV ? "." : "/thoughts",
 });
