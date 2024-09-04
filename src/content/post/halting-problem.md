@@ -1,0 +1,8 @@
+---
+title: Halting problem
+publishDate: 2023-09-17
+---
+
+<https://github.com/Its-Just-Nans/halting-problem>
+
+And now ? What are you going to do ?

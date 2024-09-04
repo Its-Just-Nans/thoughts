@@ -1,7 +1,7 @@
 ---
 interface Props {
-	title: string;
-	description?: string;
+    title: string;
+    description?: string;
 }
 
 const { title, description = "thoughts" } = Astro.props;
@@ -9,20 +9,24 @@ const { title, description = "thoughts" } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: snow;
-	}
+    @font-face {
+        font-family: "Montserrat-Medium";
+        src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+    }
+    html {
+        font-family: "Montserrat-Medium", monospace, system-ui, sans-serif;
+        background-color: snow;
+    }
 </style>
