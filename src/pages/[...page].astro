@@ -1,0 +1,55 @@
+---
+import type { GetStaticPaths, Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import { getAllPosts, sortMDByDate } from '../utils/posts'
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const allPosts = await getAllPosts();
+	const allPostsByDate = sortMDByDate(allPosts);
+	return paginate(allPostsByDate, { pageSize: Infinity})
+}) satisfies GetStaticPaths
+
+interface Props {
+	page: Page<CollectionEntry<'post'>>
+	uniqueTags: string[]
+}
+
+const { page } = Astro.props
+---
+
+<Layout title="thoughts">
+	<div class="inner-body">
+		<h1>thoughts</h1>
+		{
+			page.data.length > 0 && (
+				<div>
+					<section>
+						<ul>
+							{page.data.map(async (p) => {
+								const a = await p.render()
+                                return (
+									<a href={p.slug} class="article">
+                                        <div>{a.remarkPluginFrontmatter.title}</div>
+                                    </a>
+                                )
+                            })}
+						</ul>
+					</section>
+				</div>
+			)
+		}
+	</div>
+</Layout>
+
+<style>
+	.inner-body{
+		padding: 0 20px;
+		margin: auto;
+		max-width: 800px;
+	}
+    .article {
+        color: black;
+        text-decoration: none;
+    }
+</style>
