@@ -1,0 +1,75 @@
+[
+    {
+        "coords": [50.0816514, 14.420821],
+        "type": "place",
+        "properties": {
+            "date": "2022-11-17",
+            "location": {
+                "address": "Charvátova, 110 00 Nové Město, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Franz Kafka - Tête Pivotante"
+    },
+    {
+        "coords": [50.0870215, 14.4207065],
+        "type": "place",
+        "properties": {
+            "date": "2022-11-17",
+            "location": {
+                "address": "Staroměstské nám. 1, 110 00 Josefov, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Horloge astronomique de Prague"
+    },
+    {
+        "coords": [50.09653, 14.4275399],
+        "type": "place",
+        "properties": {
+            "date": "2022-11-15",
+            "location": {
+                "address": "Czech Republic, Letenské sady 1503, 170 00 Praha, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Parc Letna"
+    },
+    {
+        "coords": [50.102629, 14.393031],
+        "type": "place",
+
+        "properties": {
+            "date": "2022-11-12",
+            "location": {
+                "address": "České vysoké učení technické v Praze, Technická 1902/2, 166 27 Praha 6 - Dejvice-Praha 6, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Faculty of Electrical Engineering, Czech Technical University in Prague"
+    },
+    {
+        "coords": [50.0762379, 14.4190131],
+        "type": "place",
+        "properties": {
+            "date": "2022-11-12",
+            "location": {
+                "address": "Karlovo nám. 13, 120 00 Nové Město, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Faculty of Electrical Engineering CTU in Prague"
+    },
+    {
+        "coords": [50.0790534, 14.4168888],
+        "type": "place",
+        "properties": {
+            "date": "2022-11-12",
+            "location": {
+                "address": "Křemencova 1250/13, 110 00 Nové Město, Tchéquie",
+                "country_code": "CZ"
+            }
+        },
+        "name": "Hotel Pav Prague"
+    }
+]

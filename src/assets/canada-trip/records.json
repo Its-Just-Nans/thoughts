@@ -1,0 +1,425 @@
+[
+    {
+        "date": "2024-07-21",
+        "zoom": 2,
+        "places": [
+            {
+                "type": "place",
+                "name": "Orly airport",
+                "coords": [48.726243, 2.365007]
+            },
+            {
+                "type": "place",
+                "name": "Montreal airport",
+                "coords": [45.457714, -73.749908]
+            },
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Kiosque du lac des nations",
+                "coords": [45.3980279, -71.8989777]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-22",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
+            },
+            {
+                "type": "place",
+                "name": "Provigo supermarket",
+                "coords": [45.397438, -71.9208569]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-24",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Mont Bellevue",
+                "coords": [45.3807412, -71.9125009]
+            },
+            {
+                "type": "place",
+                "name": "Université de Sherbrooke",
+                "coords": [45.3780084, -71.9296692]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-25",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Belvédère Park",
+                "coords": [45.3747721, -71.8927058]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-27",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Sherbus",
+                "coords": [45.3987327, -71.9001751]
+            },
+            {
+                "type": "place",
+                "name": "Bishop University",
+                "coords": [45.3655203, -71.848184]
+            },
+            {
+                "type": "place",
+                "name": "History Museum of Sherbrooke",
+                "coords": [45.4055198, -71.8948963]
+            },
+            {
+                "type": "place",
+                "name": "Le Mena'sen",
+                "coords": [45.4104875, -71.8986036]
+            },
+            {
+                "type": "place",
+                "name": "Crémerie de l'Est",
+                "coords": [45.400532, -71.8721543]
+            },
+            {
+                "type": "place",
+                "name": "La Maison du Cinema",
+                "coords": [45.4018775, -71.8897932]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-28",
+        "zoom": 10,
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Magog - Parc de la Pointe-Merry",
+                "coords": [45.2658428, -72.1585869]
+            },
+            {
+                "type": "place",
+                "name": "Sainte-Catherine-de-Hatley",
+                "coords": [45.2472382, -72.0505205]
+            },
+            {
+                "type": "place",
+                "name": "North Hatley - Parc Dreamland",
+                "coords": [45.2768139, -71.974633]
+            },
+            {
+                "type": "place",
+                "name": "Lennoxville",
+                "coords": [45.366227, -71.8471704]
+            }
+        ]
+    },
+    {
+        "date": "2024-07-30",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Vertige escalade",
+                "coords": [45.3969022, -71.8895872]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-01",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Parc Jacques-Cartier",
+                "coords": [45.3950214, -71.9175471]
+            },
+            {
+                "type": "place",
+                "name": "Carrefour de l'Estrie",
+                "coords": [45.4013904, -71.9527123]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-02",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Patisserie Duquette",
+                "coords": [45.4065019, -71.8709003]
+            },
+            {
+                "type": "place",
+                "name": "Bois Beckett",
+                "coords": [45.4197579, -71.9279729]
+            },
+            {
+                "type": "place",
+                "name": "Parc du Domaine-Howard",
+                "coords": [45.4019074, -71.9092134]
+            },
+            {
+                "type": "place",
+                "name": "OMG Resto",
+                "coords": [45.3989895, -71.9068248]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-03",
+        "zoom": 8,
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel",
+                "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Place de la Cité",
+                "coords": [45.3999541, -71.8961828]
+            },
+            {
+                "type": "place",
+                "name": "Musée de la nature et des sciences",
+                "coords": [45.4033727, -71.8956439]
+            },
+            {
+                "type": "place",
+                "name": "Limocar",
+                "coords": [45.4012539, -71.8889769]
+            },
+            {
+                "type": "place",
+                "name": "Gare d'autocars de Montréal",
+                "coords": [45.5167831, -73.5637652]
+            },
+            {
+                "type": "place",
+                "name": "Hotel M Montréal",
+                "coords": [45.5160085, -73.5570329]
+            },
+            {
+                "type": "place",
+                "name": "Parc de la Fontaine",
+                "coords": [45.526016, -73.5688446]
+            },
+            {
+                "type": "place",
+                "name": "La Banquise",
+                "coords": [45.5253684, -73.5748476]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-04",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hotel M Montréal",
+                "coords": [45.5160085, -73.5570329]
+            },
+            {
+                "type": "place",
+                "name": "Marché Jean Talon",
+                "coords": [45.5360287, -73.6150203]
+            },
+            {
+                "type": "place",
+                "name": "Jardin Botanique",
+                "coords": [45.5603191, -73.5638121]
+            },
+            {
+                "type": "place",
+                "name": "Insectarium",
+                "coords": [45.5608435, -73.5579807]
+            },
+            {
+                "type": "place",
+                "name": "Biodôme",
+                "coords": [45.5596079, -73.550028]
+            },
+            {
+                "type": "place",
+                "name": "Planetarium",
+                "coords": [45.5607553, -73.5505309]
+            },
+            {
+                "type": "place",
+                "name": "Olympic Stadium",
+                "coords": [45.5587957, -73.5520863]
+            },
+            {
+                "type": "place",
+                "name": "Café Santropol",
+                "coords": [45.5155714, -73.5805656]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-05",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hôtel Quality Inn Centre-ville",
+                "coords": [45.5165919, -73.5617967]
+            },
+            {
+                "type": "place",
+                "name": "Parc jean Drapeau",
+                "coords": [45.5158503, -73.5324931]
+            },
+            {
+                "type": "place",
+                "name": "Biosphère",
+                "coords": [45.5139255, -73.5315283]
+            },
+            {
+                "type": "place",
+                "name": "Bassin olympique",
+                "coords": [45.5170224, -73.5269354]
+            },
+            {
+                "type": "place",
+                "name": "Ile Notre-Dame",
+                "coords": [45.506067, -73.527858]
+            },
+            {
+                "type": "place",
+                "name": "Habitat 67",
+                "coords": [45.4998125, -73.5438384]
+            },
+            {
+                "type": "place",
+                "name": "The Daniel McAllister Tug",
+                "coords": [45.4979228, -73.5523473]
+            },
+            {
+                "type": "place",
+                "name": "Café Bloc",
+                "coords": [45.5097141, -73.5631811]
+            },
+            {
+                "type": "place",
+                "name": "Maynard",
+                "coords": [45.5133619, -73.5729152]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-06",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hôtel Quality Inn Centre-ville",
+                "coords": [45.5165919, -73.5617967]
+            },
+            {
+                "type": "place",
+                "name": "Pointe-à-Callière",
+                "coords": [45.5026697, -73.5542595]
+            },
+            {
+                "type": "place",
+                "name": "Croisière",
+                "coords": [45.5027409, -73.552206]
+            },
+            {
+                "type": "place",
+                "name": "Tour port de Montréal",
+                "coords": [45.5024259, -73.5492664]
+            },
+            {
+                "type": "place",
+                "name": "Marché Bonsecours",
+                "coords": [45.5088863, -73.5516035]
+            },
+            {
+                "type": "place",
+                "name": "Belvédère (Kondiaronk) du Mont-Royal",
+                "coords": [45.5034257, -73.5870409]
+            },
+            {
+                "type": "place",
+                "name": "L'Oratoire Saint-Joseph du Mont-Royal",
+                "coords": [45.4918676, -73.6165926]
+            },
+            {
+                "type": "place",
+                "name": "Bloc Shop Hochelaga",
+                "coords": [45.5362596, -73.5433619]
+            }
+        ]
+    },
+    {
+        "date": "2024-08-07",
+        "places": [
+            {
+                "type": "place",
+                "name": "Hôtel Quality Inn Centre-ville",
+                "coords": [45.5165919, -73.5617967]
+            },
+            {
+                "type": "place",
+                "name": "Reuben's Deli & Steakhouse",
+                "coords": [45.5160085, -73.5570329]
+            },
+            {
+                "type": "place",
+                "name": "Montreal airport",
+                "coords": [45.457714, -73.749908]
+            }
+        ]
+    }
+]

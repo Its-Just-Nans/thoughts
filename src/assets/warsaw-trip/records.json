@@ -1,0 +1,241 @@
+[
+    {
+        "type": "place",
+        "coords": [52.2328613, 20.9810343],
+        "properties": {
+            "date": "2023-11-28",
+            "location": {
+                "address": "Grzybowska 79, 00-844 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Musée de l'Insurrection de Varsovie"
+    },
+    {
+        "type": "place",
+        "coords": [52.2485494, 21.0130047],
+        "properties": {
+            "date": "2023-11-28",
+            "location": {
+                "address": "Świętojańska 15, 00-266 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Gospoda pod Zygmuntem"
+    },
+    {
+        "type": "place",
+        "coords": [52.2188843, 21.0097399],
+        "properties": {
+            "date": "2023-11-23",
+            "location": {
+                "address": "Rektorska 2, 00-661 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Chochelka Bistro"
+    },
+    {
+        "type": "place",
+        "coords": [52.1900245, 21.0168889],
+        "properties": {
+            "date": "2023-11-23",
+            "location": {
+                "address": "02-626 Varsovie, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Wierzbno"
+    },
+    {
+        "type": "place",
+        "coords": [52.2365726, 21.0141823],
+        "properties": {
+            "date": "2023-11-23",
+            "location": {
+                "address": "Świętokrzyska 14, 00-050 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "SETKA - Restauracja Polska (Warszawa)"
+    },
+    {
+        "type": "place",
+        "coords": [52.2553641, 21.0460038],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Plac Konesera 1, 03-736 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Musée de la vodka polonaise"
+    },
+    {
+        "type": "place",
+        "coords": [52.2381792, 21.0121447],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Kredytowa 1, 00-056 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Musée national d'ethnographie de Varsovie"
+    },
+    {
+        "type": "place",
+        "coords": [52.2955307, 20.9315155],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Zgrupowania AK \"Kampinos\" 15, 01-943 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "MK Bowling Galeria Młociny Warszawa"
+    },
+    {
+        "type": "place",
+        "coords": [52.2377495, 21.007611],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Marszałkowska 140, 00-061 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Manekin"
+    },
+    {
+        "type": "place",
+        "coords": [52.2212012, 21.0080857],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "plac Politechniki 1, 00-661 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "École polytechnique de Varsovie"
+    },
+    {
+        "type": "place",
+        "coords": [52.2425648, 21.0247693],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Dobra 56/66, 00-312 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Bibliothèque de l'université de Varsovie"
+    },
+    {
+        "type": "place",
+        "coords": [52.2418552, 21.0287271],
+        "properties": {
+            "date": "2023-11-22",
+            "location": {
+                "address": "Wybrzeże Kościuszkowskie 20, 00-390 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Copernicus Science Centre"
+    },
+    {
+        "type": "place",
+        "coords": [52.2528996, 21.0412598],
+        "properties": {
+            "date": "2023-11-21",
+            "location": {
+                "address": "Brzeska 29/31, 03-739 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Pyzy Flaki Gorące"
+    },
+    {
+        "type": "place",
+        "coords": [52.2190346, 21.0118585],
+        "properties": {
+            "date": "2023-11-20",
+            "location": {
+                "address": "Nowowiejska 15/19, 00-665 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "The Faculty of Electronics and Information Technology on Warsaw University of Technology"
+    },
+    {
+        "type": "place",
+        "coords": [52.2247907, 21.0161],
+        "properties": {
+            "date": "2023-11-19",
+            "location": {
+                "address": "Wilcza 29A, 00-544 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "🍳 Patelnia Patera"
+    },
+    {
+        "type": "place",
+        "coords": [52.2347467, 20.9919811],
+        "properties": {
+            "date": "2023-11-19",
+            "location": {
+                "address": "Grzybowska 43, 00-855 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Munja Grzybowska 43"
+    },
+    {
+        "type": "place",
+        "coords": [52.2319813, 20.9901034],
+        "properties": {
+            "date": "2023-11-19",
+            "location": {
+                "address": "Food Town w Fabryka Norblina, Żelazna 51/53, 00-841 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Gnocchi - Come Mamma li ha fatti"
+    },
+    {
+        "type": "place",
+        "coords": [52.2409499, 21.0112962],
+        "properties": {
+            "date": "2023-11-19",
+            "location": {
+                "address": "plac Marszałka Józefa Piłsudskiego 1-3, 00-078 Warszawa, Pologne"
+            }
+        },
+        "name": "Tombe du Soldat inconnu"
+    },
+    {
+        "type": "place",
+        "coords": [52.2509138, 21.0087707],
+        "properties": {
+            "date": "2023-11-18",
+            "location": {
+                "address": "Freta 1, 00-227 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Barbakan-Korkociąg"
+    },
+    {
+        "type": "place",
+        "coords": [52.2337441, 20.9946202],
+        "properties": {
+            "date": "2023-11-18",
+            "location": {
+                "address": "Icchoka Lejba Pereca 11, 00-849 Warszawa, Pologne",
+                "country_code": "PL"
+            }
+        },
+        "name": "Golden Apartments"
+    }
+]

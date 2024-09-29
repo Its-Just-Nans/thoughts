@@ -1,55 +1,80 @@
 ---
-import type { GetStaticPaths, Page } from 'astro'
-import type { CollectionEntry } from 'astro:content'
-import Layout from '../layouts/Layout.astro'
-import { getAllPosts, sortMDByDate } from '../utils/posts'
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { getAllPosts, sortMDByDate } from "../utils/posts";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const allPosts = await getAllPosts();
-	const allPostsByDate = sortMDByDate(allPosts);
-	return paginate(allPostsByDate, { pageSize: Infinity})
-}) satisfies GetStaticPaths
+    const allPosts = await getAllPosts();
+    const allPostsByDate = sortMDByDate(allPosts);
+    return paginate(allPostsByDate, { pageSize: Infinity });
+}) satisfies GetStaticPaths;
 
 interface Props {
-	page: Page<CollectionEntry<'post'>>
-	uniqueTags: string[]
+    page: Page<CollectionEntry<"post">>;
+    uniqueTags: string[];
 }
 
-const { page } = Astro.props
+const { page } = Astro.props;
 ---
 
 <Layout title="thoughts">
-	<div class="inner-body">
-		<h1>thoughts</h1>
-		{
-			page.data.length > 0 && (
-				<div>
-					<section>
-						<ul>
-							{page.data.map(async (p) => {
-								const a = await p.render()
+    <div class="inner-body">
+        <div class="title-div">
+            <h1>thoughts</h1>
+            <div>
+                <a href="/map" target="_blank">
+                    <img src="/images/map.png" alt="map" />
+                </a>
+            </div>
+        </div>
+        {
+            page.data.length > 0 && (
+                <div>
+                    <section>
+                        <ul>
+                            {page.data.map(async (p) => {
+                                const a = await p.render();
                                 return (
-									<a href={p.slug} class="article">
-                                        <div>{a.remarkPluginFrontmatter.title}</div>
+                                    <a href={p.slug} class="article">
+                                        <div>
+                                            <span class="date">
+                                                {a.remarkPluginFrontmatter.publishDate.slice(0, 10)}
+                                            </span>
+                                            <span>-</span>
+                                            <span>{a.remarkPluginFrontmatter.title}</span>
+                                        </div>
                                     </a>
-                                )
+                                );
                             })}
-						</ul>
-					</section>
-				</div>
-			)
-		}
-	</div>
+                        </ul>
+                    </section>
+                </div>
+            )
+        }
+    </div>
 </Layout>
 
 <style>
-	.inner-body{
-		padding: 0 20px;
-		margin: auto;
-		max-width: 800px;
-	}
+    .title-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .date {
+        /* monospaced font */
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.8em;
+    }
+    .inner-body {
+        padding: 0 20px;
+        margin: auto;
+        max-width: 800px;
+    }
     .article {
         color: black;
         text-decoration: none;
+        margin-bottom: 10px;
+        display: block;
     }
 </style>

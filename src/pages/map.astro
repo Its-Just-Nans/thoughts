@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MapPoints from "../components/MapPoints.astro";
+
+const json = await Astro.glob("./../../src/assets/**/*.json");
+
+const points = [];
+
+const addToPoints = (data) => {
+    if (typeof data === "object") {
+        if (data.type === "place") {
+            points.push(data);
+        } else {
+            for (const key in data) {
+                addToPoints(data[key]);
+            }
+        }
+    }
+};
+
+for (const oneFile of json) {
+    // explore json data
+    const data = oneFile.default;
+    if (Array.isArray(data)) {
+        data.forEach((d) => addToPoints(d));
+    } else {
+        addToPoints(data);
+    }
+}
+---
+
+<Layout title="map">
+    <MapPoints points={points} />
+    <style type="text/css">
+        ::global(#map) {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</Layout>

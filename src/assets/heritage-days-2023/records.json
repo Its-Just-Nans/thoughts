@@ -1,0 +1,26 @@
+[
+    {
+        "type": "place",
+        "coords": [48.8642403, 2.3395915],
+        "properties": {
+            "date": "2023-09-22",
+            "location": {
+                "address": "31 Rue Croix des Petits Champs, 75001 Paris, France",
+                "country_code": "FR"
+            }
+        },
+        "name": "Banque de France"
+    },
+    {
+        "type": "place",
+        "coords": [48.8628365, 2.3427064],
+        "properties": {
+            "date": "2023-09-22",
+            "location": {
+                "address": "2 Rue de Viarmes, 75001 Paris, France",
+                "country_code": "FR"
+            }
+        },
+        "name": "Bourse de Commerce - Pinault Collection"
+    }
+]
