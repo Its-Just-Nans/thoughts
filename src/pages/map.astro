@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MapPoints from "../components/MapPoints.astro";
+import type { PointsType } from "../types";
 
 const json = await Astro.glob("./../../src/assets/**/*.json");
 
-const points = [];
+const points: PointsType = [];
 
-const addToPoints = (data) => {
+const addToPoints = (data: any) => {
     if (typeof data === "object") {
         if (data.type === "place") {
             points.push(data);

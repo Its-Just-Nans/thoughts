@@ -1,6 +1,8 @@
 ---
+import type { PointsType } from "../types";
+
 interface Props {
-    points: { name: string; coords: [number, number]; type: "place" }[];
+    points: PointsType;
     height?: number;
     zoom?: number;
     view?: [number, number];
