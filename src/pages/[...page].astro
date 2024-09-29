@@ -16,12 +16,14 @@ interface Props {
 }
 
 const { page } = Astro.props;
+
+const repo = "https://github.com/Its-Just-Nans/thoughts";
 ---
 
 <Layout title="thoughts">
     <div class="inner-body">
         <div class="title-div">
-            <h1>thoughts</h1>
+            <h1>thought<a class="link-repo" href={repo} target="_blank">s</a></h1>
             <div>
                 <a href="/map" target="_blank">
                     <img src="/images/map.png" alt="map" />
@@ -56,6 +58,10 @@ const { page } = Astro.props;
 </Layout>
 
 <style>
+    .link-repo {
+        color: inherit;
+        text-decoration: inherit;
+    }
     .title-div {
         display: flex;
         justify-content: space-around;
