@@ -8,7 +8,7 @@ import "../styles/markdown.css";
 export const getStaticPaths = (async () => {
     const articles = await getAllPosts();
     return articles.map((entry) => ({
-        params: { slug: entry.slug },
+        params: { slug: entry.data.customSlug || entry.slug },
         props: { entry },
     }));
 }) satisfies GetStaticPaths;

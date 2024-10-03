@@ -37,8 +37,9 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
                         <ul>
                             {page.data.map(async (p) => {
                                 const a = await p.render();
+                                const slug = p.data.customSlug || p.slug;
                                 return (
-                                    <a href={p.slug} class="article">
+                                    <a href={slug} class="article">
                                         <div>
                                             <span class="date">
                                                 {a.remarkPluginFrontmatter.publishDate.slice(0, 10)}
