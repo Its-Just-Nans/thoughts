@@ -1,0 +1,27 @@
+[
+    {
+        "type": "place",
+        "coords": [45.7602513, 4.8600968],
+        "name": "Lyon Part Dieu"
+    },
+    {
+        "type": "place",
+        "coords": [46.1260399, 3.4310438],
+        "name": "Vichy train station"
+    },
+    {
+        "type": "place",
+        "coords": [44.9273731, 4.8932792],
+        "name": "Valence train station"
+    },
+    {
+        "type": "place",
+        "coords": [43.9416835, 4.8051137],
+        "name": "Avignon train Station"
+    },
+    {
+        "type": "place",
+        "coords": [43.3027954, 5.3804874],
+        "name": "Gare Saint Charles"
+    }
+]
