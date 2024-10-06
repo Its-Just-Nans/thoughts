@@ -1,0 +1,54 @@
+[
+    {
+        "date": "August 5, 2024",
+        "price": "CA$7.20",
+        "start_time": "1:45 PM",
+        "duration": "35 min",
+        "vehicle_used": "C00115",
+        "start_location": "Parc de Dieppe (Pierre-Dupuy)",
+        "end_location": "de la Commune / King",
+        "start_at": "1:45 PM",
+        "end_at": "2:20 PM",
+        "usage_fees": "CA$7.20",
+        "total": "CA$7.20"
+    },
+    {
+        "date": "August 5, 2024",
+        "price": "CA$15.20",
+        "start_time": "11:25 AM",
+        "duration": "1 hr, 15 min, 2 sec",
+        "vehicle_used": "A01192",
+        "start_location": "Parc Jean-Drapeau (Chemin Macdonald)",
+        "end_location": "Parc Plage",
+        "start_at": "11:25 AM",
+        "end_at": "12:40 PM",
+        "usage_fees": "CA$15.20",
+        "total": "CA$15.20"
+    },
+    {
+        "date": "August 4, 2024",
+        "price": "CA$7.40",
+        "start_time": "10:01 AM",
+        "duration": "36 min, 12 sec",
+        "vehicle_used": "B04650",
+        "start_location": "Marché Jean-Talon (Casgrain / Shamrock)",
+        "end_location": "27e avenue / Rosemont",
+        "start_at": "10:01 AM",
+        "end_at": "10:37 AM",
+        "usage_fees": "CA$7.40",
+        "total": "CA$7.40"
+    },
+    {
+        "date": "August 4, 2024",
+        "price": "CA$6.80",
+        "start_time": "8:49 AM",
+        "duration": "33 min, 6 sec",
+        "vehicle_used": "P61968",
+        "start_location": "St-Hubert / René-Levesque",
+        "end_location": "Marché Jean-Talon (Casgrain / Shamrock)",
+        "start_at": "8:49 AM",
+        "end_at": "9:22 AM",
+        "usage_fees": "CA$6.80",
+        "total": "CA$6.80"
+    }
+]

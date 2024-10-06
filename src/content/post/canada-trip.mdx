@@ -187,3 +187,23 @@ Ate at the meat-lover's paradise [Ruben's](https://reubens.ca/)
 
 </VisitingMap>
 
+---
+
+Cool Sherbrooke Map, from tourist office:
+
+import SherbrookeMap from "../../assets/canada-trip/sherbrooke.png"
+import { Image } from 'astro:assets';
+
+
+<Image src={SherbrookeMap} alt="Sherbrooke map"/>
+
+---
+
+[Bixi](https://bixi.com/) data:
+
+> note: I should have used the monthly pass, I think it would have been cheaper.
+
+import BixiData from "../../assets/canada-trip/bixi.json"
+import AutoTable from "../../components/AutoTable.astro"
+
+<AutoTable data={BixiData} />
