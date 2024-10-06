@@ -36,16 +36,14 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
                     <section>
                         <ul>
                             {page.data.map(async (p) => {
-                                const a = await p.render();
+                                // const article = await p.render();
                                 const slug = p.data.customSlug || p.slug;
                                 return (
                                     <a href={slug} class="article">
                                         <div>
-                                            <span class="date">
-                                                {a.remarkPluginFrontmatter.publishDate.slice(0, 10)}
-                                            </span>
+                                            <span class="date">{p.data.publishDate.toISOString().slice(0, 10)}</span>
                                             <span>-</span>
-                                            <span>{a.remarkPluginFrontmatter.title}</span>
+                                            <span>{p.data.title}</span>
                                         </div>
                                     </a>
                                 );
@@ -83,5 +81,10 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
         text-decoration: none;
         margin-bottom: 10px;
         display: block;
+    }
+    @media screen and (max-width: 800px) {
+        ul {
+            padding-inline-start: 15px;
+        }
     }
 </style>
