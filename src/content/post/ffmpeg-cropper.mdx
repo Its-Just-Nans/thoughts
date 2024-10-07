@@ -24,12 +24,10 @@ Most important part of the code are
 - the drop zone
 
 ```html
-<div
-    ondrop="dropHandler(event);"
->
+<div ondrop="dropHandler(event);">
 ```
 
-- the video to `src` conversion
+- the (video) file to `src` conversion
 
 ```js
 const fileURL = window.URL.createObjectURL(file);
