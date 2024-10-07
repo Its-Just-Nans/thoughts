@@ -17,13 +17,18 @@ interface Props {
 
 const { page } = Astro.props;
 
+const site = "https://n4n5.dev";
 const repo = "https://github.com/Its-Just-Nans/thoughts";
 ---
 
 <Layout title="thoughts">
     <div class="inner-body">
         <div class="title-div">
-            <h1>thought<a class="link-repo" href={repo} target="_blank">s</a></h1>
+            <h1 class="title">
+                <a class="link-title" href={site} target="_blank">t</a>
+                <span class="link-title">hought</span>
+                <a class="link-title" href={repo} target="_blank">s</a>
+            </h1>
             <div>
                 <a href="/map" target="_blank">
                     <img src="/images/map.png" alt="map" />
@@ -57,7 +62,10 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
 </Layout>
 
 <style>
-    .link-repo {
+    .title {
+        display: inline-flex;
+    }
+    .link-title {
         color: inherit;
         text-decoration: inherit;
     }
