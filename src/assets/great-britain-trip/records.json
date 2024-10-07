@@ -1,0 +1,12 @@
+[
+    {
+        "type": "place",
+        "name": "Piccadilly Circus",
+        "coords": [51.510003, -0.1345306]
+    },
+    {
+        "type": "place",
+        "name": "The Roman Baths",
+        "coords": [51.3810465, -2.359777]
+    }
+]

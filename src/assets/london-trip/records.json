@@ -1,0 +1,12 @@
+[
+    {
+        "type": "place",
+        "name": "Piccadilly Circus",
+        "coords": [51.510003, -0.1345306]
+    },
+    {
+        "type": "place",
+        "name": "Millennium Bridge",
+        "coords": [51.5095822, -0.0985953]
+    }
+]

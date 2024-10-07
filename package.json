@@ -13,7 +13,9 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.5",
     "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.2.0",
     "astro": "^4.15.2",
+    "rehype-external-links": "^3.0.0",
     "typescript": "^5.5.4"
   }
 }
