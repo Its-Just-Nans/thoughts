@@ -1,5 +1,5 @@
 ---
-title: Calendar
+title: calendar
 publishDate: 2023-12-17
 ---
 
@@ -15,3 +15,34 @@ This tiny library (https://github.com/Its-Just-Nans/go-calendar) can create a sv
 - https://en.wikipedia.org/wiki/Century_leap_year
 - https://github.com/Its-Just-Nans/go-calendar
 - https://pkg.go.dev/github.com/Its-Just-Nans/go-calendar
+
+---
+
+Example to generate calendar from Github contributions
+
+Using [gh api](https://cli.github.com/manual/gh) and [jq](https://github.com/jqlang/jq), you can get your contributions from Github with
+
+```sh
+gh api graphql -F owner='Its-Just-Nans' -f query='
+    query( $owner: String!) {
+      user(login: $owner) {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            contributionCount
+            weekday
+            date
+          }
+        }
+      }
+    }
+  }}' | jq '[.data.user.contributionsCollection.contributionCalendar.weeks | .[].contributionDays |.[] | {date: (.date), num:(.contributionCount)}]' > out.json
+```
+
+Then you can generate the calendar with
+
+```sh
+go run github.com/Its-Just-Nans/go-calendar@latest -k date -c num -i out.json -o contributions.svg
+```
