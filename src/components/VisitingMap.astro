@@ -55,6 +55,9 @@ const customId = Math.random().toString(36).substring(7);
 
     const showDataOf = (idx) => {
         map.eachLayer((layer) => {
+            if (layer instanceof L.Polyline) {
+                layer.remove();
+            }
             if (layer instanceof L.Marker) {
                 layer.remove();
             }
@@ -73,11 +76,12 @@ const customId = Math.random().toString(36).substring(7);
         let month = new Intl.DateTimeFormat("en", { month: "short" }).format(date);
         let day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
         document.getElementById("title").innerText = `${days[date.getDay()]} ${day} ${month} ${year}`;
-        markers.forEach((oneMarker) => {
+        const links = markers.map((oneMarker) => {
             L.marker(oneMarker.coords).addTo(map).bindPopup(oneMarker.name).openPopup();
+            return oneMarker.coords;
         });
-        const center = markers[markers.length - 1].coords;
-        map.setView(center, data[idx].zoom || 12);
+        L.polyline(links, { color: "blue" }).addTo(map);
+        map.fitBounds(links);
     };
 
     showDataOf(currentIdx);

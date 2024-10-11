@@ -55,6 +55,11 @@
             },
             {
                 "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
+            },
+            {
+                "type": "place",
                 "name": "Mont Bellevue",
                 "coords": [45.3807412, -71.9125009]
             },
@@ -72,6 +77,11 @@
                 "type": "place",
                 "name": "Hotel",
                 "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
             },
             {
                 "type": "place",
@@ -161,6 +171,11 @@
             },
             {
                 "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
+            },
+            {
+                "type": "place",
                 "name": "Vertige escalade",
                 "coords": [45.3969022, -71.8895872]
             }
@@ -173,6 +188,11 @@
                 "type": "place",
                 "name": "Hotel",
                 "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
             },
             {
                 "type": "place",
@@ -193,6 +213,11 @@
                 "type": "place",
                 "name": "Hotel",
                 "coords": [45.3980776, -71.896832]
+            },
+            {
+                "type": "place",
+                "name": "Work",
+                "coords": [45.3857033, -71.9190536]
             },
             {
                 "type": "place",
