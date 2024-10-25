@@ -17,21 +17,48 @@ interface Props {
 
 const { page } = Astro.props;
 
+const project = "thoughts";
 const site = "https://n4n5.dev";
-const repo = "https://github.com/Its-Just-Nans/thoughts";
+const repo = `https://github.com/Its-Just-Nans/${project}`;
+const rss = `https://${project}.n4n5.dev/rss.xml`;
+
+let idx = 0;
+const g = () => {
+    return project[idx++]; // crash if wrong
+};
 ---
 
 <Layout title="thoughts">
     <div class="inner-body">
         <div class="title-div">
             <h1 class="title">
-                <a class="link-title" href={site} target="_blank">t</a>
-                <span class="link-title">hought</span>
-                <a class="link-title" href={repo} target="_blank">s</a>
+                <a
+                    class="link-title"
+                    href={site}
+                    target="_blank"
+                    title="main website"
+                    aria-label="webpage title is hidding a link to main website">{g()}</a
+                >
+                <span class="link-title">{g()}</span>
+                <a
+                    class="link-title"
+                    href={rss}
+                    target="_blank"
+                    title="rss feed"
+                    aria-label="webpage title is hidding a link to rss feed">{g() + g()}</a
+                >
+                <span class="link-title">{g() + g() + g()}</span>
+                <a
+                    class="link-title"
+                    href={repo}
+                    target="_blank"
+                    title="github repo"
+                    aria-label="webpage title is hidding a link to github repo">{g()}</a
+                >
             </h1>
             <div>
-                <a href="/map" target="_blank">
-                    <img src="/images/map.png" alt="map" />
+                <a href="/map" target="_blank" title="map" aria-label="a link to a map">
+                    <img src="/images/map.png" class="map-img" alt="map" />
                 </a>
             </div>
         </div>
@@ -44,13 +71,17 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
                                 // const article = await p.render();
                                 const slug = p.data.customSlug || p.slug;
                                 return (
-                                    <a href={slug} class="article">
-                                        <div>
-                                            <span class="date">{p.data.publishDate.toISOString().slice(0, 10)}</span>
-                                            <span>-</span>
-                                            <span>{p.data.title}</span>
-                                        </div>
-                                    </a>
+                                    <li class="article">
+                                        <a href={slug} class="article-link">
+                                            <div>
+                                                <span class="date">
+                                                    {p.data.publishDate.toISOString().slice(0, 10)}
+                                                </span>
+                                                <span>-</span>
+                                                <span>{p.data.title}</span>
+                                            </div>
+                                        </a>
+                                    </li>
                                 );
                             })}
                         </ul>
@@ -85,11 +116,18 @@ const repo = "https://github.com/Its-Just-Nans/thoughts";
         max-width: 800px;
     }
     .article {
+        display: block;
+    }
+    .article-link {
         color: black;
         text-decoration: none;
         margin-bottom: 10px;
-        display: block;
+        display: inline-block;
         text-transform: lowercase;
+    }
+    .map-img {
+        width: 32px;
+        height: 32px;
     }
 
     @media screen and (max-width: 800px) {

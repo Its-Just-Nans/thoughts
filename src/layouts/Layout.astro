@@ -25,6 +25,7 @@ const { title, description = "thoughts" } = Astro.props;
     @font-face {
         font-family: "Montserrat-Medium";
         src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+        font-display: fallback;
     }
     html {
         font-family: "Montserrat-Medium", monospace, system-ui, sans-serif;
