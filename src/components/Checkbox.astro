@@ -6,7 +6,7 @@ const customId = `checkbox-${article}-${Math.random().toString(36).substring(7)}
 
 <input type="checkbox" id={customId} />
 
-<script define:vars={{ article, customId }}>
+<script is:inline define:vars={{ article, customId }}>
     let jsoned_state = localStorage.getItem(`${article}-state`);
     if (!jsoned_state) {
         state = {};
