@@ -1,0 +1,27 @@
+---
+title: Instagram wants you to use the app
+publishDate: 2024-10-26
+---
+
+
+Instagram loads its "reels" using [`URL.createObjectURL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static) to play the video.
+
+When you start scrolling, Instagram preloads five videos by creating five object URLs.
+
+import { Image } from 'astro:assets';
+
+import streams from "../../assets/instagram-wants-you-to-use-the-app/instagram-stream.png"
+
+<Image src={streams} alt="screenshot of the 5 object" />
+
+Then you scroll more, and it starts to load more videos.
+
+However, Instagram never calls [`URL.revokeObjectURL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL_static) to free the memory.
+
+As a result, the memory usage of the tab increases, and at a certain point, the tab may crash.
+
+I guess it's to ~~annoy~~ encourage you to use the app.
+
+---
+
+Moral of the story: ~~read the docs~~ stop scrolling.
