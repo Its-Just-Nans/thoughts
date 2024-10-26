@@ -237,5 +237,13 @@
             }
         },
         "name": "Golden Apartments"
+    },
+    {
+        "type": "place",
+        "coords": [52.2333607, 20.9944121],
+        "properties": {
+            "date": "2023-11-23"
+        },
+        "name": "La Lucy"
     }
 ]
