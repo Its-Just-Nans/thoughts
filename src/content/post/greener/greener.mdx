@@ -6,18 +6,21 @@ customSlug: greener
 
 Creation of a website about ecology for a school project
 
-import {Image} from "astro:assets";
-
-import img from "./greener.png"
-
-<div style="text-align: center;">
-    <Image src={img} alt="logo greener" height={100}/>
-</div>
 
 
 Using only HTML5 and CSS3! - used the famous https://validator.w3.org/
 
 A save is available here: https://its-just-nans.github.io/greener/
 
-repo: https://github.com/Its-Just-Nans/greener
+---
+
+import {Image} from "astro:assets";
+
+import logo from "./greener.png"
+
+<div style="text-align: center">
+    <div>https://github.com/Its-Just-Nans/greener</div>
+    <br />
+    <Image src={logo} alt="greener logo" height={100}/>
+</div>
 
