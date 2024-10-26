@@ -1,0 +1,277 @@
+---
+title: Télécom Paris student associations
+publishDate: 2024-01-20
+customSlug: telecom-paris-student-associations
+---
+
+A brief description of my participation in student associations at Télécom Paris
+
+---
+
+export const Style = ()=>{
+    return (
+        <style>
+        {`
+            .special-in-title{
+                margin: 5px;
+                text-align: center;
+            }
+            .special-title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .special-img {
+                max-height: 50px;
+                max-width: 50px;
+                width: auto;
+                display: inline-block;
+                margin: 5px;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .special-centering p {
+                text-align: center;
+            }
+            .special-centering a {
+                text-align: center;
+                border: 1px solid var(--border-color);
+                color: color-mix(in srgb, var(--globalColor), black 60%);
+                border-radius: 5px;
+                margin: auto;
+                padding: 4px;
+                background-color: var(--globalColor);
+            }
+            .website{
+                font-size: 0.8em;
+                margin-bottom: 15px;
+                text-align: right;
+                display: flex;
+                justify-content: space-between;
+            }
+            h2 {
+                margin-bottom: 5px !important;
+            }
+        `}
+        </style>
+    )
+}
+
+import { Image } from "astro:assets"
+
+<Style />
+
+
+export const Img = ({src, children})=>{
+    const link = "https://bel-art.github.io/telecom-logos/"
+    return (
+        <div className="special-title">
+            <a href={link} target="_blank">
+            {src && (
+                <Image src={src} alt="logo" className="special-img" />
+            )}
+            </a>
+            <span className="special-in-title">
+            {children}
+            </span>
+        </div>
+    )
+}
+
+export const Space = ()=> <br/>
+
+export const Website = ({job, children}) => {
+    return (
+        <div class="website">
+            <div>{job}</div>
+            <div>{children}</div>
+        </div>
+    )
+}
+
+
+Student associations are a major part of life at Télécom Paris. Since I started my studies in 2021, I have been involved in several associations. They are a great way to meet new people, learn new things, and have fun, of course!
+
+<Space />
+
+import LogoForumTelecomParis from "./logo_forum.png"
+
+## <Img src={LogoForumTelecomParis}> Forum Télécom Paris</Img>
+
+<Website job={"Member - Website and logistics departments"} >https://forumtelecomparis.fr/</Website>
+
+The "Forum Télécom Paris" association, consisting of around 40 students, organizes an annual recruitment day at Télécom Paris. This was one of the first associations I joined because the mandate starts and ends with the Forum (usually in November). I was in charge of the website and the IT department.
+
+The website was built with Django, PostgreSQL, and Redis. I say "was" because there are a lot of complaints about the difficulty of Django (in fact, it's not difficult; you just need to know a lot about it and spend - too much - time digging into the documentation).
+
+I didn't work much on the website, but I made some useful changes, such as:
+
+- Creating a `docker-compose` file to greatly improve the development experience
+- Stopping the use of npm to build the styles and using a simple pythonic library instead
+
+I was also involved in the design and logistics departments. One of my best contributions was updating the logos (I just changed a color - as requested, but now there are [many combinations](https://github.com/Forum-Telecom-Paris/logos/releases)).
+
+<Space />
+
+import LogoRezel from "./logo_rezel.png"
+
+## <Img src={LogoRezel}>Rezel</Img>
+
+<Website job={"Board Member"} >https://rezel.net</Website>
+
+Rezel is an association that provides services for Télécom Paris associations and students (cloud storage, communication, web hosting, etc.).
+
+I have been a member of Rezel since the start of my studies at Télécom Paris, and I was part of the board for the 2022-2023 mandate.
+
+In 2023, Rezel is now officially (again!) an Internet service provider for the students near Télécom Paris: [fai.rezel.net](https://fai.rezel.net/)!
+
+At Rezel, I created a club in honor of the great [Fabrice Bellard](https://bellard.org), named the "Bel Art" Club - founded in January 2022 (`CA_Rezel_2022-01-25`) and ended in September 2023 (`CA_Rezel_2023-09-16`). The club is still alive (really?) here: [bel-art.github.io](https://bel-art.github.io/).
+
+<Space />
+
+import LogoMAD from "./logo_mad.png"
+
+## <Img src={LogoMAD}>MaD - Make a Difference</Img>
+
+<Website job={"Member - Head of the compost division"}>https://mad.telecom-paris.fr</Website>
+
+I was in charge of the compost department at the MaD association (Télécom Paris sustainable development association).
+
+Note that I will always think the current logo is hideous, [I made a better one](https://github.com/Its-Just-Nans/logo-mad) (of course), but they didn't want to change it.
+
+<Space />
+
+import LogoBDA from "./logo_bda.png"
+
+## <Img src={LogoBDA}> BDA - Arts Office - "Bureau Des Arts"</Img>
+
+<Website job={"IT helper"} />
+
+I wasn't heavily involved in the BDA, but I created a website (a tiny landing page) and a logo animation for them.
+
+<Space />
+
+import LogoKFT from "./logo_kft.png"
+
+## <Img src={LogoKFT}>KFT</Img>
+
+<Website job={"Member - 'Mickaël Mazars' division"}>https://kft.telecom-paris.fr</Website>
+
+KFT stands for "Kebab Factory Télécom," so you can easily understand what it's about. This association creates events where everybody can enjoy a great time and savor a delightful kebab! 🥙😋
+
+Legend says that Mickaël Mazars was once the best man and savior of KFT and I took his place!
+
+My actions in KFT included maintaining the website (and doing a little rewrite). I also happened to fix some equipment!
+
+Website: [kft.telecom-paris.fr](https://kft.telecom-paris.fr)
+
+<Space />
+
+import LogoTelecomEtude from "./logo_telecom_etude.png"
+
+## <Img src={LogoTelecomEtude}> Telecom Etude - The Junior Enterprise of Télécom Paris</Img>
+
+<Website job={"Member (JET) - IT division"}>https://telecom-etude.fr</Website>
+
+Telecom Etude, the [junior enterprise](https://en.wikipedia.org/wiki/Junior_enterprise) specializing in new technologies, has over 42 years of experience in various fields!
+
+Telecom Etude is one of the most serious associations, which is quite normal because it acts like a company (recruiting people for missions).
+
+My principal mission was to create a new, clean website (from scratch). As it is mostly a static website, I used [Astro](https://astro.build) to generate the pages. Note that the repo is mostly public: [github.com/telecom-etude/website](https://github.com/telecom-etude/website)!
+
+I also participated as a developer for a mission (more info [here](https://n4n5.dev/history/telecom-etude-mission/)).
+
+Do you have a project? Contact Telecom Etude here: [telecom-etude.fr](https://telecom-etude.fr)
+
+<Space />
+
+import LogoTelecomBusinessAndFinance from "./logo_telecom_business_finance.png"
+
+## <Img src={LogoTelecomBusinessAndFinance}>TBF - Télécom Business and Finance</Img>
+
+<Website>https://telecom-business-finance.com</Website>
+
+Was I in TBF? No. Did I take some pictures for them? Yes.
+
+<Space />
+
+import LogoBDS from "./logo_bds.png"
+
+## <Img src={LogoBDS}>BDS - Sports Office - "Bureau Des Sports"</Img>
+
+<Website job={"Member - Medias and IT divisions"}>https://bds-telecom-paris.fr</Website>
+
+My role in the BDS was to create the website and manage media coverage (photo and video) of events.
+
+A legend says that the BDS and websites are not friendly because every year the team decides to change the website.
+
+On my side, the old website wasn't working anymore, so I created a new one using Node.js, Svelte, and MongoDB. I even created pull requests to npm packages to update some open source packages I used! But as the legend says, the new team decided to just do another website - and you can't really do anything about it.
+
+<Space />
+
+import LogoTSM from "./logo_tsm.png"
+
+## <Img src={LogoTSM}>TSM - Télécom Sound & Magic</Img>
+
+<Website job={"Member"}>https://tsm-tp.fr</Website>
+
+TSM is the DJ, sound, and lights association of Télécom Paris. TSM also provides services!
+
+Boom boom in the ears!
+
+<Space />
+
+import LogoSnax from "./logo_snax.png"
+
+## <Img src={LogoSnax}>Snax</Img>
+
+<Website job={"Director/Head of website departement"}>https://snax.rezel.net</Website>
+
+Snax is the legendary club with countless departments.
+
+To enter it, you need to create a new department and pursue a related quest. Mine was to create the website department by launching the Snax website [snax.rezel.net](https://snax.rezel.net) (try to count departments - not really updated anymore).
+
+<Space />
+
+import LogoComete from "./logo_comete.png"
+
+## <Img src={LogoComete}>Comète</Img>
+
+<Website job={"Board member - IT and Equipment Manager"}>https://comete-tp.fr</Website>
+
+Comète is an audiovisual and communication association (some say it's the best association at Télécom Paris).
+
+I was responsible for:
+- The IT department (maintaining the website and creating an archiving system)
+- The equipment
+
+Did you know Comète produces approximately 2+TB of data per year (videos, photos, etc.)?!
+
+Comète also undertakes missions to cover certain events! Contact us at [comete-tp.fr](https://comete-tp.fr)
+
+<Space />
+
+import LogoLH from "./logo_lh.png"
+
+## <Img src={LogoLH}>LH - Weekly Letter - "Lettre Hebdomadaire"</Img>
+
+<Website job={"IT Helper"}>https://lh.rezel.net</Website>
+
+I don't really know if I could say I'm part of the LH, but if this [major thing](https://github.com/lettre-hebdomadaire/lettre-hebdomadaire.github.io/pull/5) exists (thanks to [Astro](https://astro.build)), I guess we can say so. Thanks to solid fellows who resurrected the LH (yes, it died several times - long story), we now have a solid editorial team (weekly memes are unmatched - thanks for that).
+
+In the beginning, the LH was in paper format and you can find some remnants if you dig in the right places at Télécom! Nowadays it has been digitalized and you can read it online ([auto-deployed from the repo](https://github.com/lettre-hebdomadaire/lettre-hebdomadaire.github.io/actions) sir🫡): [link to github repo](https://github.com/lettre-hebdomadaire/lettre-hebdomadaire.github.io).
+
+<Space />
+
+## General Good Practices
+
+Here are some good practices I have learned during my time in associations:
+
+- This repo could be useful for future years [bel-art.github.io/telecom-logos](https://bel-art.github.io/telecom-logos/) (if it's maintained)
+- If the association keeps your work, think about how you would like future people to see it: documentation and explanation, date, the five [5 Ws](https://en.wikipedia.org/wiki/Five_Ws)
+- Always date the work, outside (name of file) and inside (in the corner on a poster, by mentioning it in the video, etc.). It's a little thing, but it's important.
+- Remember that now we save a lot of things with technology (which wasn't the case before, that's why we don't have a lot of association archives), so it's important to keep a trace of what has been done, noting what worked and what didn't.
+- Help and take the time to explain to others (and next) members and always ask if they understand what you are explaining.
+- Appreciate your work, you did it, be proud of it.
+
+You can find more information about associations and more on the [CHAT](https://chat.rezel.net) ("chat" means "cat" but the initials of "CHAT" stand for "Conservation of the Associative History of Télécom").
