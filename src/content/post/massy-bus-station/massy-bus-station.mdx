@@ -1,0 +1,25 @@
+---
+title: Massy bus station
+publishDate: 2024-01-01
+customSlug: massy-bus-station
+---
+
+import { Image } from 'astro:assets';
+
+Wtf is this bus station?
+
+
+import oldStation from "./pole-de-massy-palaiseau.png"
+
+
+export const CustomImage = ({ link, linkImg, alt }) => (
+  <a href={link} title={alt} style="text-align: center">
+    <Image src={oldStation} alt={alt}/>
+    <p>{alt}</p>
+  </a>
+);
+
+<CustomImage link={"https://www.quartier-atlantis.fr/nos-projets/une-desserte-exceptionnelle/"} linkImg={oldStation} alt={"Old bus station"} />
+
+
+Project about the station https://www.youtube.com/watch?v=mZVpbDRxupg
