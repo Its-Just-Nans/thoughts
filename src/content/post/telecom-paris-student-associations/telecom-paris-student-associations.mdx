@@ -52,6 +52,9 @@ export const Style = ()=>{
             h2 {
                 margin-bottom: 5px !important;
             }
+            .job{
+                text-align: left;
+            }
         `}
         </style>
     )
@@ -83,7 +86,7 @@ export const Space = ()=> <br/>
 export const Website = ({job, children}) => {
     return (
         <div class="website">
-            <div>{job}</div>
+            <div class="job">{job}</div>
             <div>{children}</div>
         </div>
     )
