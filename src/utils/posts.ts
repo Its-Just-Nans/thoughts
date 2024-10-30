@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 
 export async function getAllPosts() {
     return await getCollection("post", ({ data }) => {
+        if (data.draft) {
+            console.log(`Draft post found: ${data.title}`);
+        }
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 }
