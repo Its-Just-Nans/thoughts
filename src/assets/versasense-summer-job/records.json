@@ -1,0 +1,110 @@
+[
+    {
+        "type": "place",
+        "coords": [50.8821423, 4.6866031],
+        "properties": {
+            "date": "2022-09-19T15:42:58Z",
+            "url": "http://maps.google.com/?q=3000+Louvain,+Belgique&ftid=0x47c160e6cda73d0b:0x4412ab701faf295",
+            "location": {
+                "address": "3000 Louvain, Belgique"
+            }
+        },
+        "name": "Mini Louvain"
+    },
+    {
+        "type": "place",
+        "coords": [50.8737329, 4.6859455],
+        "name": "VELO"
+    },
+    {
+        "type": "place",
+        "coords": [50.9265868, 4.9165],
+        "name": "Vlooybergtoren - Wild stairs"
+    },
+    {
+        "type": "place",
+        "coords": [50.8781506, 4.707263],
+        "properties": {
+            "date": "2022-08-15T18:44:25Z",
+            "url": "http://maps.google.com/?cid=3441066549758174853",
+            "location": {
+                "address": "Monseigneur Ladeuzeplein 21, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "Universiteitsbibliotheek en bibliotheektoren"
+    },
+    {
+        "type": "place",
+        "coords": [50.8717337, 4.6973922],
+        "properties": {
+            "date": "2022-08-15T18:43:02Z",
+            "url": "http://maps.google.com/?cid=15254863763952667666",
+            "location": {
+                "address": "Groot Begijnhof 7, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "Grand Béguinage Louvain"
+    },
+    {
+        "type": "place",
+        "coords": [50.8778663, 4.6911911],
+        "properties": {
+            "date": "2022-08-15T15:58:16Z",
+            "location": {
+                "address": "Kapucijnenvoer 30, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "Jardin botanique de Louvain"
+    },
+    {
+        "type": "place",
+        "coords": [50.878846, 4.7058051],
+        "properties": {
+            "date": "2022-08-14T17:35:55Z",
+            "url": "http://maps.google.com/?cid=3329930321407467784",
+            "location": {
+                "address": "Monseigneur Ladeuzeplein 4, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "decadenza Gelateria"
+    },
+    {
+        "type": "place",
+        "coords": [50.8770882, 4.7015315],
+        "properties": {
+            "date": "2022-08-14T17:34:40Z",
+            "location": {
+                "address": "Hogeschoolplein 5, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "Dewerf"
+    },
+    {
+        "type": "place",
+        "coords": [50.8621585, 4.6718381],
+        "properties": {
+            "date": "2022-06-29T09:07:48Z",
+            "location": {
+                "address": "Kapeldreef 60, 3001 Leuven, Belgique"
+            }
+        },
+        "name": "VersaSense"
+    },
+    {
+        "type": "place",
+        "coords": [50.87242, 4.7026],
+        "properties": {
+            "date": "2022-06-26T12:36:09Z",
+            "location": {
+                "address": "Van Het Sestichstraat 7, 3000 Leuven, Belgique",
+                "country_code": "BE"
+            }
+        },
+        "name": "Bike park"
+    }
+]

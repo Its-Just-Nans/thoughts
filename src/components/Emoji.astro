@@ -1,0 +1,24 @@
+---
+import { isSchool, isDev, isWork, isThought } from "../utils/menus";
+
+const { data, flex = false } = Astro.props;
+---
+
+<span class="emoji-wrap" class:list={[{ "emoji-flex": flex }]}>
+    <span class="emoji-place" title="School related">{data.isSchool && isSchool}</span>
+    <span class="emoji-place" title="Dev related">{data.isDev && isDev}</span>
+    <span class="emoji-place" title="Work related">{data.isWork && isWork}</span>
+    <span class="emoji-place" title="A thought">{data.isThought && isThought}</span>
+</span>
+
+<style>
+    .emoji-wrap {
+        text-align: right;
+    }
+    .emoji-flex {
+        display: flex;
+    }
+    .emoji-place:hover {
+        cursor: help;
+    }
+</style>

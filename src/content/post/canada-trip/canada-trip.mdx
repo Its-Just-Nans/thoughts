@@ -191,21 +191,24 @@ Ate at the meat-lover's paradise [Ruben's](https://reubens.ca/)
 
 ---
 
-Cool Sherbrooke Map, from tourist office:
-
 import SherbrookeMap from "./sherbrooke.png"
 import { Image } from 'astro:assets';
 
-
-<Image src={SherbrookeMap} alt="Sherbrooke map"/>
+<details>
+    <summary>Cool Sherbrooke Map, from tourist office:</summary>
+    <Image src={SherbrookeMap} alt="Sherbrooke map"/>
+</details>
 
 ---
-
-[Bixi](https://bixi.com/) data:
-
-> note: I should have used the monthly pass, I think it would have been cheaper.
 
 import BixiData from "../../../assets/canada-trip/bixi.json"
 import AutoTable from "../../../components/AutoTable.astro"
 
+<details>
+<summary>Bixi (https://bixi.com/) data:</summary>
+
+> note: I should have used the monthly pass, I think it would have been cheaper.
+
 <AutoTable data={BixiData} />
+
+</details>

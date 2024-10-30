@@ -35,6 +35,7 @@ const post = defineCollection({
             isWork: z.boolean().default(false).optional(),
             isDev: z.boolean().default(false).optional(),
             isSchool: z.boolean().default(false).optional(),
+            isThought: z.boolean().default(false).optional(),
         }),
 });
 
