@@ -11,7 +11,11 @@ const menus = [
             subtitle: null,
             func: () => {
                 const el = document.getElementsByClassName("emoji-controller") as HTMLCollectionOf<HTMLElement>;
-                el[0].classList.toggle("hide-emoji");
+                if (!el[0].classList.toggle("hide-emoji")) {
+                    localStorage.setItem("isEmoji", "true");
+                } else {
+                    localStorage.removeItem("isEmoji");
+                }
             },
         },
     ],
@@ -153,7 +157,11 @@ const menus = [
         link.addEventListener("click", () => {
             document.querySelector(".menu").style.display = "none";
         });
-    });
+    }); 
+    if (localStorage.getItem("isEmoji")) {
+        const el = document.getElementsByClassName("emoji-controller");
+        el[0].classList.toggle("hide-emoji");
+    }
 </script>
 
 <style>
