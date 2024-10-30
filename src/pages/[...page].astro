@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import RightClickMenu from "../components/RightClickMenu.astro";
 import { getAllPosts, sortMDByDate } from "../utils/posts";
 import DefaultMenu from "../components/DefaultMenu.astro";
-import { isDev, isSchool, isWork } from "../utils/menus";
+import Emoji from "../components/Emoji.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = await getAllPosts();
@@ -72,6 +72,7 @@ const g = () => {
                         <input id="isAll" name="selector" class="selector" type="radio" value="all" checked />
                         <input id="isWork" name="selector" class="selector" type="radio" value="work" />
                         <input id="isSchool" name="selector" class="selector" type="radio" value="school" />
+                        <input id="isThought" name="selector" class="selector" type="radio" value="thought" />
                         <input id="isDev" name="selector" class="selector" type="radio" value="school" />
                         <ul class="emoji-controller hide-emoji">
                             {page.data.map(async (p) => {
@@ -81,7 +82,12 @@ const g = () => {
                                     <li
                                         class="article line-effect"
                                         class:list={[
-                                            { isWork: p.data.isWork, isDev: p.data.isDev, isSchool: p.data.isSchool },
+                                            {
+                                                isWork: p.data.isWork,
+                                                isDev: p.data.isDev,
+                                                isSchool: p.data.isSchool,
+                                                isThought: p.data.isThought,
+                                            },
                                         ]}
                                     >
                                         <a href={slug} class="article-link">
@@ -94,9 +100,7 @@ const g = () => {
                                             </div>
                                         </a>
                                         <div class="emoji">
-                                            {p.data.isSchool && isSchool}
-                                            {p.data.isDev && isDev}
-                                            {p.data.isWork && isWork}
+                                            <Emoji data={p.data} flex={true} />
                                         </div>
                                     </li>
                                 );
@@ -129,6 +133,9 @@ const g = () => {
         display: var(--original-display);
     }
     #isWork:checked ~ ul .isWork {
+        display: var(--original-display);
+    }
+    #isThought:checked ~ ul .isThought {
         display: var(--original-display);
     }
     #isSchool:checked ~ ul .isSchool {

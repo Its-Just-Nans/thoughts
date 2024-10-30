@@ -4,29 +4,34 @@ import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import Layout from "../layouts/Layout.astro";
 import { getAllPosts } from "../utils/posts";
 import "../styles/markdown.css";
+import { isSchool, isDev, isWork } from "../utils/menus";
+import Emoji from "../components/Emoji.astro";
 
 export const getStaticPaths = (async () => {
     const articles = await getAllPosts();
     return articles.map((entry) => ({
         params: { slug: entry.data.customSlug || entry.slug },
-        props: { entry },
+        props: { entry, data: entry.data },
     }));
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { entry } = Astro.props;
-const { Content, remarkPluginFrontmatter } = await entry.render();
-const title = remarkPluginFrontmatter.title;
-const date = new Date(remarkPluginFrontmatter.publishDate);
+const { entry, data } = Astro.props;
+const { Content } = await entry.render();
+const title = data.title;
+const date = new Date(data.publishDate);
 ---
 
-<Layout title={remarkPluginFrontmatter.title} description={`thoughts about ${title.toLowerCase()}`} `>
+<Layout title={data.title} description={`thoughts about ${title.toLowerCase()}`} `>
     <div class="article-body">
         <h1>{title}</h1>
         <div class="under-title">
             <a class="back-link" href="../"> 🔙 </a>
-            <span>{date.toISOString().split("T")[0]}</span>
+            <span>
+                <Emoji data={data} />
+                <span>{date.toISOString().split("T")[0]}</span>
+            </span>
         </div>
         <hr />
         <div class="markdown-body">
