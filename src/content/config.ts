@@ -32,6 +32,9 @@ const post = defineCollection({
             tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
             ogImage: z.string().optional(),
             customSlug: z.string().optional(),
+            isWork: z.boolean().default(false).optional(),
+            isDev: z.boolean().default(false).optional(),
+            isSchool: z.boolean().default(false).optional(),
         }),
 });
 

@@ -1,11 +1,13 @@
 ---
 title: Canada Trip
 publishDate: 2024-08-10
+customSlug: canada-trip
+isWork: true
 ---
 
 
-import VisitingMap from "../../components/VisitingMap.astro"
-import data from "../../assets/canada-trip/records.json"
+import VisitingMap from "../../../components/VisitingMap.astro"
+import data from "../../../assets/canada-trip/records.json"
 
 <VisitingMap data={data}>
 
@@ -191,7 +193,7 @@ Ate at the meat-lover's paradise [Ruben's](https://reubens.ca/)
 
 Cool Sherbrooke Map, from tourist office:
 
-import SherbrookeMap from "../../assets/canada-trip/sherbrooke.png"
+import SherbrookeMap from "./sherbrooke.png"
 import { Image } from 'astro:assets';
 
 
@@ -203,7 +205,7 @@ import { Image } from 'astro:assets';
 
 > note: I should have used the monthly pass, I think it would have been cheaper.
 
-import BixiData from "../../assets/canada-trip/bixi.json"
-import AutoTable from "../../components/AutoTable.astro"
+import BixiData from "../../../assets/canada-trip/bixi.json"
+import AutoTable from "../../../components/AutoTable.astro"
 
 <AutoTable data={BixiData} />

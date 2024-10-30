@@ -2,7 +2,10 @@
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import RightClickMenu from "../components/RightClickMenu.astro";
 import { getAllPosts, sortMDByDate } from "../utils/posts";
+import DefaultMenu from "../components/DefaultMenu.astro";
+import { isDev, isSchool, isWork } from "../utils/menus";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = await getAllPosts();
@@ -66,14 +69,23 @@ const g = () => {
             page.data.length > 0 && (
                 <div>
                     <section>
-                        <ul>
+                        <input id="isAll" name="selector" class="selector" type="radio" value="all" checked />
+                        <input id="isWork" name="selector" class="selector" type="radio" value="work" />
+                        <input id="isSchool" name="selector" class="selector" type="radio" value="school" />
+                        <input id="isDev" name="selector" class="selector" type="radio" value="school" />
+                        <ul class="emoji-controller hide-emoji">
                             {page.data.map(async (p) => {
                                 // const article = await p.render();
                                 const slug = p.data.customSlug || p.slug;
                                 return (
-                                    <li class="article">
+                                    <li
+                                        class="article line-effect"
+                                        class:list={[
+                                            { isWork: p.data.isWork, isDev: p.data.isDev, isSchool: p.data.isSchool },
+                                        ]}
+                                    >
                                         <a href={slug} class="article-link">
-                                            <div>
+                                            <div class="link-wrap">
                                                 <span class="date">
                                                     {p.data.publishDate.toISOString().slice(0, 10)}
                                                 </span>
@@ -81,6 +93,11 @@ const g = () => {
                                                 <span>{p.data.title}</span>
                                             </div>
                                         </a>
+                                        <div class="emoji">
+                                            {p.data.isSchool && isSchool}
+                                            {p.data.isDev && isDev}
+                                            {p.data.isWork && isWork}
+                                        </div>
                                     </li>
                                 );
                             })}
@@ -90,9 +107,36 @@ const g = () => {
             )
         }
     </div>
+    <RightClickMenu>
+        <DefaultMenu />
+    </RightClickMenu>
 </Layout>
 
 <style>
+    .hide-emoji .emoji {
+        display: none;
+    }
+    .selector {
+        display: none;
+    }
+    .article {
+        display: none;
+        justify-content: space-between;
+        --original-display: flex;
+        margin-bottom: 10px;
+    }
+    #isAll:checked ~ ul .article {
+        display: var(--original-display);
+    }
+    #isWork:checked ~ ul .isWork {
+        display: var(--original-display);
+    }
+    #isSchool:checked ~ ul .isSchool {
+        display: var(--original-display);
+    }
+    #isDev:checked ~ ul .isDev {
+        display: var(--original-display);
+    }
     .title {
         display: inline-flex;
     }
@@ -115,13 +159,34 @@ const g = () => {
         margin: auto;
         max-width: 800px;
     }
-    .article {
-        display: block;
+    .line-effect::before {
+        content: " ";
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        inset: 0 0 0 0;
+        background: Gainsboro;
+        z-index: -1;
+        transition: transform 0.3s ease;
+    }
+    .line-effect:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .line-effect {
+        width: auto;
+        position: relative;
+    }
+    .hide-emoji .line-effect {
+        width: fit-content;
     }
     .article-link {
         color: black;
         text-decoration: none;
-        margin-bottom: 10px;
         display: inline-block;
         text-transform: lowercase;
     }
