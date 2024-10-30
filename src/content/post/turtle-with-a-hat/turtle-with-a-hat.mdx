@@ -15,7 +15,7 @@ export const Centered = ({children}) => {
     )
 }
 
-export const Img = ({alt, src})=>{
+export const CustomImg = ({alt, src})=>{
     const imgStyle = {
         width: "30%"
     }
@@ -43,7 +43,7 @@ import Turtle from "./emoji_u1f422.svg"
 
 
 <Centered>
-    <Img src={Turtle} alt="turtle emoji"/>
+    <CustomImg src={Turtle} alt="turtle emoji"/>
 </Centered>
 
 
@@ -54,7 +54,7 @@ What about a big cowboy hat? We've chosen it from [https://github.com/twitter/tw
 import CowBoyHatEmoji from "./1f920.svg"
 
 <Centered>
-    <Img src={CowBoyHatEmoji} alt="cowboy hat emoji" />
+    <CustomImg src={CowBoyHatEmoji} alt="cowboy hat emoji" />
 </Centered>
 
 ### Step 3: Extract the hat
@@ -62,7 +62,7 @@ import CowBoyHatEmoji from "./1f920.svg"
 import CowBoyHat from "./1f920_hat.svg"
 
 <Centered>
-    <Img src={CowBoyHat} alt="cowboy hat only emoji" />
+    <CustomImg src={CowBoyHat} alt="cowboy hat only emoji" />
 </Centered>
 
 ### Step 4: Combine
@@ -70,7 +70,7 @@ import CowBoyHat from "./1f920_hat.svg"
 import TurtleWithHat from "./turtle_with_hat.svg"
 
 <Centered>
-    <Img src={TurtleWithHat} alt="turtle with hat" />
+    <CustomImg src={TurtleWithHat} alt="turtle with hat" />
 </Centered>
 
 ## Final result
@@ -78,5 +78,5 @@ import TurtleWithHat from "./turtle_with_hat.svg"
 import Imgn4n5 from "./n4n5.png"
 
 <Centered>
-    <Img src={Imgn4n5} alt="turtle with hat - png file" />
+    <CustomImg src={Imgn4n5} alt="turtle with hat - png file" />
 </Centered>

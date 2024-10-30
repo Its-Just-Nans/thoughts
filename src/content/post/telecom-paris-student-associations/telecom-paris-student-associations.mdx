@@ -1,13 +1,11 @@
 ---
-title: Telecom Paris student associations
+title: Télécom Paris student associations
 publishDate: 2024-01-20
 customSlug: telecom-paris-student-associations
 isSchool: true
 ---
 
-A brief description of my participation in student associations at Télécom Paris
-
----
+> A brief description of my participation in student associations at Télécom Paris
 
 export const Style = ()=>{
     return (
@@ -66,13 +64,13 @@ import { Image } from "astro:assets"
 <Style />
 
 
-export const Img = ({src, children})=>{
+export const CustomImg = ({src, children})=>{
     const link = "https://bel-art.github.io/telecom-logos/"
     return (
         <div className="special-title">
             <a href={link} target="_blank">
             {src && (
-                <Image src={src} alt="logo" className="special-img" />
+                <Image src={src} alt="logo" className="special-img" height={200}/>
             )}
             </a>
             <span className="special-in-title">
@@ -100,7 +98,7 @@ Student associations are a major part of life at Télécom Paris. Since I starte
 
 import LogoForumTelecomParis from "./logo_forum.png"
 
-## <Img src={LogoForumTelecomParis}> Forum Télécom Paris</Img>
+## <CustomImg src={LogoForumTelecomParis}> Forum Télécom Paris</CustomImg>
 
 <Website job={"Member - Website and logistics departments"} >https://forumtelecomparis.fr/</Website>
 
@@ -119,7 +117,7 @@ I was also involved in the design and logistics departments. One of my best cont
 
 import LogoRezel from "./logo_rezel.png"
 
-## <Img src={LogoRezel}>Rezel</Img>
+## <CustomImg src={LogoRezel}>Rezel</CustomImg>
 
 <Website job={"Board Member"} >https://rezel.net</Website>
 
@@ -135,7 +133,7 @@ At Rezel, I created a club in honor of the great [Fabrice Bellard](https://bella
 
 import LogoMAD from "./logo_mad.png"
 
-## <Img src={LogoMAD}>MaD - Make a Difference</Img>
+## <CustomImg src={LogoMAD}>MaD - Make a Difference</CustomImg>
 
 <Website job={"Member - Head of the compost division"}>https://mad.telecom-paris.fr</Website>
 
@@ -147,7 +145,7 @@ Note that I will always think the current logo is hideous, [I made a better one]
 
 import LogoBDA from "./logo_bda.png"
 
-## <Img src={LogoBDA}> BDA - Arts Office - "Bureau Des Arts"</Img>
+## <CustomImg src={LogoBDA}> BDA - Arts Office - "Bureau Des Arts"</CustomImg>
 
 <Website job={"IT helper"} />
 
@@ -157,7 +155,7 @@ I wasn't heavily involved in the BDA, but I created a website (a tiny landing pa
 
 import LogoKFT from "./logo_kft.png"
 
-## <Img src={LogoKFT}>KFT</Img>
+## <CustomImg src={LogoKFT}>KFT</CustomImg>
 
 <Website job={"Member - 'Mickaël Mazars' division"}>https://kft.telecom-paris.fr</Website>
 
@@ -173,7 +171,7 @@ Website: [kft.telecom-paris.fr](https://kft.telecom-paris.fr)
 
 import LogoTelecomEtude from "./logo_telecom_etude.png"
 
-## <Img src={LogoTelecomEtude}> Telecom Etude - The Junior Enterprise of Télécom Paris</Img>
+## <CustomImg src={LogoTelecomEtude}> Telecom Etude - The Junior Enterprise of Télécom Paris</CustomImg>
 
 <Website job={"Member (JET) - IT division"}>https://telecom-etude.fr</Website>
 
@@ -191,7 +189,7 @@ Do you have a project? Contact Telecom Etude here: [telecom-etude.fr](https://te
 
 import LogoTelecomBusinessAndFinance from "./logo_telecom_business_finance.png"
 
-## <Img src={LogoTelecomBusinessAndFinance}>TBF - Télécom Business and Finance</Img>
+## <CustomImg src={LogoTelecomBusinessAndFinance}>TBF - Télécom Business and Finance</CustomImg>
 
 <Website>https://telecom-business-finance.com</Website>
 
@@ -201,7 +199,7 @@ Was I in TBF? No. Did I take some pictures for them? Yes.
 
 import LogoBDS from "./logo_bds.png"
 
-## <Img src={LogoBDS}>BDS - Sports Office - "Bureau Des Sports"</Img>
+## <CustomImg src={LogoBDS}>BDS - Sports Office - "Bureau Des Sports"</CustomImg>
 
 <Website job={"Member - Medias and IT divisions"}>https://bds-telecom-paris.fr</Website>
 
@@ -215,7 +213,7 @@ On my side, the old website wasn't working anymore, so I created a new one using
 
 import LogoTSM from "./logo_tsm.png"
 
-## <Img src={LogoTSM}>TSM - Télécom Sound & Magic</Img>
+## <CustomImg src={LogoTSM}>TSM - Télécom Sound & Magic</CustomImg>
 
 <Website job={"Member"}>https://tsm-tp.fr</Website>
 
@@ -227,7 +225,7 @@ Boom boom in the ears!
 
 import LogoSnax from "./logo_snax.png"
 
-## <Img src={LogoSnax}>Snax</Img>
+## <CustomImg src={LogoSnax}>Snax</CustomImg>
 
 <Website job={"Director/Head of website departement"}>https://snax.rezel.net</Website>
 
@@ -239,7 +237,7 @@ To enter it, you need to create a new department and pursue a related quest. Min
 
 import LogoComete from "./logo_comete.png"
 
-## <Img src={LogoComete}>Comète</Img>
+## <CustomImg src={LogoComete}>Comète</CustomImg>
 
 <Website job={"Board member - IT and Equipment Manager"}>https://comete-tp.fr</Website>
 
@@ -257,7 +255,7 @@ Comète also undertakes missions to cover certain events! Contact us at [comete-
 
 import LogoLH from "./logo_lh.png"
 
-## <Img src={LogoLH}>LH - Weekly Letter - "Lettre Hebdomadaire"</Img>
+## <CustomImg src={LogoLH}>LH - Weekly Letter - "Lettre Hebdomadaire"</CustomImg>
 
 <Website job={"IT Helper"}>https://lh.rezel.net</Website>
 
@@ -271,7 +269,7 @@ In the beginning, the LH was in paper format and you can find some remnants if y
 
 Here are some good practices I have learned during my time in associations:
 
-- This repo could be useful for future years [bel-art.github.io/telecom-logos](https://bel-art.github.io/telecom-logos/) (if it's maintained)
+- This repo could be useful for future years https://bel-art.github.io/telecom-logos/ (if it's maintained)
 - If the association keeps your work, think about how you would like future people to see it: documentation and explanation, date, the five [5 Ws](https://en.wikipedia.org/wiki/Five_Ws)
 - Always date the work, outside (name of file) and inside (in the corner on a poster, by mentioning it in the video, etc.). It's a little thing, but it's important.
 - Remember that now we save a lot of things with technology (which wasn't the case before, that's why we don't have a lot of association archives), so it's important to keep a trace of what has been done, noting what worked and what didn't.

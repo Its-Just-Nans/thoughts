@@ -31,7 +31,10 @@ const post = defineCollection({
             draft: z.boolean().default(false),
             tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
             ogImage: z.string().optional(),
-            customSlug: z.string().optional(),
+            customSlug: z
+                .string()
+                .transform((str) => (str.endsWith("/") ? `${str}/` : str))
+                .optional(),
             isWork: z.boolean().default(false).optional(),
             isDev: z.boolean().default(false).optional(),
             isSchool: z.boolean().default(false).optional(),

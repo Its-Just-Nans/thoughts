@@ -29,6 +29,8 @@ let idx = 0;
 const g = () => {
     return project[idx++]; // crash if wrong
 };
+
+const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
 
 <Layout title="thoughts">
@@ -96,7 +98,7 @@ const g = () => {
                                                     {p.data.publishDate.toISOString().slice(0, 10)}
                                                 </span>
                                                 <span>-</span>
-                                                <span>{p.data.title}</span>
+                                                <span>{removeAccents(p.data.title)}</span>
                                             </div>
                                         </a>
                                         <div class="emoji">
