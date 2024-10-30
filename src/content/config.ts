@@ -33,7 +33,7 @@ const post = defineCollection({
             ogImage: z.string().optional(),
             customSlug: z
                 .string()
-                .transform((str) => (str.endsWith("/") ? `${str}/` : str))
+                .transform((str) => (str.endsWith("/") ? str : `${str}/`))
                 .optional(),
             isWork: z.boolean().default(false).optional(),
             isDev: z.boolean().default(false).optional(),
