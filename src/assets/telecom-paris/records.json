@@ -1,7 +1,20 @@
 [
     {
         "type": "place",
+        "coords": [46.7353523, -1.9911402],
+        "date": "2021-08-28T20:14:25Z",
+        "name": "WEI Télécom Paris"
+    },
+    {
+        "type": "place",
         "coords": [48.7130105, 2.2001932],
         "name": "Télécom Paris"
+    },
+    {
+        "type": "place",
+        "coords": [48.8282968, 2.2611241],
+        "date": "2021-12-06T21:24:45Z",
+        "address": "147 Quai du Président Roosevelt, 92130 Issy-les-Moulineaux, France",
+        "name": "Capgemini"
     }
 ]
