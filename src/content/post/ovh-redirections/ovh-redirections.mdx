@@ -1,0 +1,37 @@
+---
+title: OVH redirections
+customSlug: ovh-redirections
+publishDate: 2024-11-13
+isDev: true
+isThought: true
+---
+
+Ticket #0001 - Redirection not handling HTTPS
+
+## Bug
+
+Some domains are https only - the browser only use https for these domains[^https-only]. Thus, redirections are not working with these domains
+
+## What should happen
+
+Redirections should work with all domains
+
+## How to reproduce
+
+- Have a httpS only domains like `.dev`
+- Setup a "ovh redirection"
+- OVH will create a `A DNS` entry linked to 213.186.33.5 (redirect.ovh.net) under the hood
+- Try to use the redirection
+    - Using curl[^curl]:
+
+        ```sh
+        curl http://subdomain.domain.dev # -> works because http
+        curl https://subdomain.domain.dev # -> DONT works because https
+        ```
+    - Using browser:
+
+        not working because the browser forces us to use HTTPS
+
+
+[^https-only]: https://serverfault.com/questions/1067229/list-of-top-level-domains-tlds-that-require-https-connections-like-dev
+[^curl]: https://curl.se/
