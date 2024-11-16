@@ -17,6 +17,11 @@ const post = defineCollection({
                 .string()
                 .or(z.date())
                 .transform((val) => new Date(val)),
+            lastEdit: z
+                .string()
+                .or(z.date())
+                .transform((val) => new Date(val))
+                .optional(),
             updatedDate: z
                 .string()
                 .optional()
