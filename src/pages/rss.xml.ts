@@ -5,6 +5,12 @@ import { getAllPosts, sortMDByDate } from "../utils/posts";
 export async function GET(context: APIContext) {
     const allPosts = await getAllPosts();
     const allPostsByDate = sortMDByDate(allPosts);
+    const customData = {
+        language: "en-EN",
+        lastBuildDate: new Date().toUTCString(),
+        generator: context.generator ?? "Astro",
+        copyright: `Copyright ${new Date().getFullYear()} n4n5`,
+    };
     return rss({
         title: "Thoughts of n4n5",
         description: "RSS feed for thoughts by n4n5",
@@ -14,6 +20,9 @@ export async function GET(context: APIContext) {
             pubDate: post.data.updatedDate ?? post.data.publishDate,
             link: `/${post.data.customSlug ?? post.slug}/`,
         })),
-        customData: `<language>en-EN</language>`,
+        customData: Object.entries(customData).reduce((acc, [key, value]) => {
+            acc += `<${key}>${value}</${key}>\n`;
+            return acc;
+        }, ""),
     });
 }
