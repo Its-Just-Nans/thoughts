@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
         site: context.site || new URL("https://thoughts.n4n5.dev"),
         items: allPostsByDate.map((post) => ({
             title: post.data.title,
-            pubDate: post.data.lastEdit || post.data.publishDate,
+            pubDate: post.data.updatedDate ?? post.data.publishDate,
             link: `/${post.data.customSlug ?? post.slug}/`,
         })),
         customData: `<language>en-EN</language>`,
