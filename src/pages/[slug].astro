@@ -30,6 +30,13 @@ const date = new Date(data.publishDate);
             <span>
                 <Emoji data={data} />
                 <span>{date.toISOString().split("T")[0]}</span>
+                {
+                    data.updatedDate && (
+                        <span title={`This post was updated the ${data.updatedDate.toISOString().split("T")[0]}`}>
+                            🔄
+                        </span>
+                    )
+                }
             </span>
         </div>
         <hr />
