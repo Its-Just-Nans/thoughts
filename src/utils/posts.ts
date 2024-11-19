@@ -17,10 +17,10 @@ export async function getAllPosts() {
     });
 }
 
-export function sortMDByDate(posts: Array<CollectionEntry<"post">>) {
+export function sortMDByDate(posts: Array<CollectionEntry<"post">>, useUpdatedDate = false) {
     return posts.sort((a, b) => {
-        const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf();
-        const bDate = new Date(b.data.updatedDate ?? b.data.publishDate).valueOf();
+        const aDate = new Date(useUpdatedDate ? a.data.updatedDate ?? a.data.publishDate : a.data.publishDate).valueOf();
+        const bDate = new Date(useUpdatedDate ? b.data.updatedDate ?? b.data.publishDate : b.data.publishDate).valueOf();
         return bDate - aDate;
     });
 }
