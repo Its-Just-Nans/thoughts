@@ -4,6 +4,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import Layout from "../layouts/Layout.astro";
 import { getAllPosts } from "../utils/posts";
 import "../styles/markdown.css";
+import "../styles/tooltip.css";
 import Emoji from "../components/Emoji.astro";
 
 export const getStaticPaths = (async () => {
@@ -32,8 +33,12 @@ const date = new Date(data.publishDate);
                 <span>{date.toISOString().split("T")[0]}</span>
                 {
                     data.updatedDate && (
-                        <span title={`This post was updated the ${data.updatedDate.toISOString().split("T")[0]}`}>
-                            🔄
+                        <span
+                            class="updated"
+                            data-tooltip={`This post was updated the ${data.updatedDate.toISOString().split("T")[0]}`}
+                        >
+                            <span>🔄</span>
+                            <span class="updated-date">{data.updatedDate.toISOString().split("T")[0]}</span>
                         </span>
                     )
                 }
@@ -47,6 +52,15 @@ const date = new Date(data.publishDate);
 </Layout>
 
 <style>
+    .updated {
+        cursor: help;
+    }
+    .updated-date {
+        display: none;
+    }
+    .updated:hover .updated-date {
+        display: inline;
+    }
     .under-title {
         display: flex;
         justify-content: space-between;
