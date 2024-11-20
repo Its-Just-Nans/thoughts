@@ -75,7 +75,8 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
                         <input id="isWork" name="selector" class="selector" type="radio" value="work" />
                         <input id="isSchool" name="selector" class="selector" type="radio" value="school" />
                         <input id="isThought" name="selector" class="selector" type="radio" value="thought" />
-                        <input id="isDev" name="selector" class="selector" type="radio" value="school" />
+                        <input id="isEvent" name="selector" class="selector" type="radio" value="event" />
+                        <input id="isDev" name="selector" class="selector" type="radio" value="dev" />
                         <ul class="emoji-controller hide-emoji">
                             {page.data.map(async (p) => {
                                 // const article = await p.render();
@@ -89,6 +90,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
                                                 isDev: p.data.isDev,
                                                 isSchool: p.data.isSchool,
                                                 isThought: p.data.isThought,
+                                                isEvent: p.data.isEvent,
                                             },
                                         ]}
                                     >
@@ -138,6 +140,9 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
         display: var(--original-display);
     }
     #isThought:checked ~ ul .isThought {
+        display: var(--original-display);
+    }
+    #isEvent:checked ~ ul .isEvent {
         display: var(--original-display);
     }
     #isSchool:checked ~ ul .isSchool {

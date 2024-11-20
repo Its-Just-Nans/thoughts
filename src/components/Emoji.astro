@@ -1,5 +1,5 @@
 ---
-import { isSchool, isDev, isWork, isThought } from "../utils/menus";
+import { isSchool, isDev, isWork, isThought, isEvent } from "../utils/menus";
 
 const { data, flex = false } = Astro.props;
 ---
@@ -9,6 +9,7 @@ const { data, flex = false } = Astro.props;
     <span class="emoji-place" title="Dev related">{data.isDev && isDev}</span>
     <span class="emoji-place" title="Work related">{data.isWork && isWork}</span>
     <span class="emoji-place" title="A thought">{data.isThought && isThought}</span>
+    <span class="emoji-place" title="An event">{data.isEvent && isEvent}</span>
 </span>
 
 <style>

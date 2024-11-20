@@ -40,6 +40,7 @@ const post = defineCollection({
             isDev: z.boolean().default(false).optional(),
             isSchool: z.boolean().default(false).optional(),
             isThought: z.boolean().default(false).optional(),
+            isEvent: z.boolean().default(false).optional(),
         }),
 });
 
