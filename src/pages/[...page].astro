@@ -207,8 +207,16 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
         text-transform: lowercase;
     }
     .map-img {
-        width: 32px;
-        height: 32px;
+        --width: 32px;
+        --hover-width: 42px;
+        width: var(--width);
+        height: var(--width);
+        margin: calc((var(--hover-width) - var(--width)) / 2);
+    }
+    .map-img:hover {
+        width: var(--hover-width);
+        height: var(--hover-width);
+        margin: 0px;
     }
     .link-map {
         -webkit-tap-highlight-color: transparent;

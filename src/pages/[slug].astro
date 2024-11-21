@@ -33,10 +33,7 @@ const date = new Date(data.publishDate);
                 <span>{date.toISOString().split("T")[0]}</span>
                 {
                     data.updatedDate && (
-                        <span
-                            class="updated"
-                            data-tooltip={`This post was updated the ${data.updatedDate.toISOString().split("T")[0]}`}
-                        >
+                        <span class="updated" data-tooltip="updated date">
                             <span>🔄</span>
                             <span class="updated-date">{data.updatedDate.toISOString().split("T")[0]}</span>
                         </span>
