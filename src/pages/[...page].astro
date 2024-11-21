@@ -62,7 +62,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
                 >
             </h1>
             <div>
-                <a href="/map" target="_blank" title="map" aria-label="a link to a map">
+                <a href="/map" target="_blank" title="map" aria-label="a link to a map" class="link-map">
                     <img src="/images/map.png" class="map-img" alt="map" />
                 </a>
             </div>
@@ -99,8 +99,8 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
                                                 <span class="date">
                                                     {p.data.publishDate.toISOString().slice(0, 10)}
                                                 </span>
-                                                <span>-</span>
-                                                <span>{removeAccents(p.data.title)}</span>
+                                                <span class="link-dash">-</span>
+                                                <span class="link-title">{removeAccents(p.data.title)}</span>
                                             </div>
                                         </a>
                                         <div class="emoji">
@@ -200,6 +200,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
     }
     .article-link {
         color: black;
+        -webkit-tap-highlight-color: transparent;
         flex: 1;
         text-decoration: none;
         display: inline-block;
@@ -208,6 +209,9 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
     .map-img {
         width: 32px;
         height: 32px;
+    }
+    .link-map {
+        -webkit-tap-highlight-color: transparent;
     }
 
     @media screen and (max-width: 800px) {
