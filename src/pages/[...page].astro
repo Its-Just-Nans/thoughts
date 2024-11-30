@@ -6,6 +6,7 @@ import RightClickMenu from "../components/RightClickMenu.astro";
 import { getAllPosts, sortMDByDate } from "../utils/posts";
 import DefaultMenu from "../components/DefaultMenu.astro";
 import Emoji from "../components/Emoji.astro";
+import Time from "../components/Time.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = await getAllPosts();
@@ -97,7 +98,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
                                         <a href={slug} class="article-link">
                                             <div class="link-wrap">
                                                 <span class="date">
-                                                    {p.data.publishDate.toISOString().slice(0, 10)}
+                                                    <Time date={p.data.publishDate} />
                                                 </span>
                                                 <span class="link-dash">-</span>
                                                 <span class="link-title">{removeAccents(p.data.title)}</span>

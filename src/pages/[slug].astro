@@ -6,6 +6,7 @@ import { getAllPosts } from "../utils/posts";
 import "../styles/markdown.css";
 import "../styles/tooltip.css";
 import Emoji from "../components/Emoji.astro";
+import Time from "../components/Time.astro";
 
 export const getStaticPaths = (async () => {
     const articles = await getAllPosts();
@@ -30,12 +31,14 @@ const date = new Date(data.publishDate);
             <a class="back-link" href="../"> 🔙 </a>
             <span>
                 <Emoji data={data} />
-                <span>{date.toISOString().split("T")[0]}</span>
+                <span><Time date={date} /></span>
                 {
                     data.updatedDate && (
                         <span class="updated" data-tooltip="updated date">
                             <span>🔄</span>
-                            <span class="updated-date">{data.updatedDate.toISOString().split("T")[0]}</span>
+                            <span class="updated-date">
+                                <Time date={data.updatedDate} />
+                            </span>
                         </span>
                     )
                 }
