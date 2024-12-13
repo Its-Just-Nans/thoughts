@@ -1,6 +1,7 @@
 ---
 title: ffmpeg cropper
 publishDate: 2024-03-10
+updatedDate: 2024-12-13
 isDev: true
 ---
 
@@ -24,16 +25,21 @@ Most important part of the code are
 
 - the drop zone
 
-```html
-<div ondrop="dropHandler(event);">
-```
+    ```html
+    <div
+        ondrop="dropHandler(event);"
+        ondragover="dragOverHandler(event, true);"
+        ondragleave="dragOverHandler(event, false);"
+    >
+    ```
+    > The `ondragover` and `ondragleave` should call `event.preventDefault();` to allow the drop
 
 - the (video) file to `src` conversion
 
-```js
-const fileURL = window.URL.createObjectURL(file);
-video = document.createElement("video");
-video.src = fileURL;
-```
+    ```js
+    const fileURL = window.URL.createObjectURL(file);
+    video = document.createElement("video");
+    video.src = fileURL;
+    ```
 
-> Note that [`createObjectURL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static) can use a lot of memory, so don't forget to revoke the URL when you don't need it anymore with [`window.URL.revokeObjectURL(fileURL);`](https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL_static)
+    > Note that [`createObjectURL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static) can use a lot of memory, so don't forget to revoke the URL when you don't need it anymore with [`window.URL.revokeObjectURL(fileURL);`](https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL_static)
