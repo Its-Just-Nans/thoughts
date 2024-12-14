@@ -1,0 +1,76 @@
+---
+title: Cool quotes
+publishDate: 2023-10-03
+customSlug: cool-quotes
+---
+
+export const CustomStyle = () => {
+    return (
+        <style>
+            {`
+            .quote summary {
+                display: block !important;
+                padding: 0;
+            }
+            .quote {
+                padding: 0;
+                border-radius: 8px;
+            }
+            .quote p {
+                text-align: right;
+            }
+            summary pre {
+                margin-bottom: 0px !important;
+                padding: 8px !important;
+            }
+            `}
+        </style>
+    );
+}
+
+
+<CustomStyle />
+
+
+import { Code } from "astro/components";
+
+export const Quote = ({ author = "", quote = "", children = null }) => {
+    return (
+        <details className="quote">
+            <summary>
+                <Code lang="plaintext" code={quote} />
+            </summary>
+            {children}
+            {author && <p>{author}</p>}
+        </details>
+    );
+}
+
+
+<Quote quote="La mesure de l'amour, c'est d'aimer sans mesure." author={"Sermons de Saint Augustin"} />
+
+<Quote quote="An idiot admires complexity, a genius admires simplicity" author={"Terry A. Davis"} />
+
+<Quote quote="In academia, if it's good you publish it. In industry, if it's good you keep it secret" author={"Terry A. Davis"} />
+
+<Quote quote="Un bâtiment écologique est un bâtiment qu'on ne construit pas" author={"Jean Sébastien GOMEZ"} />
+
+<Quote quote="Un trou noir c'est troublant" author={"Oliver Hudry"} />
+
+<Quote quote={"Health is invisible to the healthy"} author="/"/>
+
+<Quote quote="video games should have outtakes in the credits that show all the funny bugs and glitches that happened during development" author={"@eigenborn - Twitter - 2019-06-30"} />
+
+<Quote quote="The best way to predict the future is to invent it" author="Alan Kay" />
+
+<Quote quote="there are no experts in this fields, only pioneers." author="/" />
+
+<Quote quote="Kubernetes but it's 200 banks accounts with $249,999 in each one." author="@chrisalbon - Twitter - 2023-03-13" />
+
+<Quote quote="File over app" author="Steph Ango - https://stephango.com/file-over-app" />
+
+import ImgBrad from "./be_who_you_needed.png"
+
+<Quote quote="Be who you needed when you were younger." author="Brad Montague">
+    <img src={ImgBrad.src} width="50%" alt="Be who you needed when you were younger - Brad Montague" />
+</Quote>
