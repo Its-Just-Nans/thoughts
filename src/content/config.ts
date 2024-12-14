@@ -12,7 +12,7 @@ const post = defineCollection({
     schema: ({ image }) =>
         z.object({
             title: z.string().max(28),
-            description: z.string().min(50).max(160).optional(),
+            description: z.string().min(20).max(160).optional(),
             publishDate: z
                 .string()
                 .or(z.date())
