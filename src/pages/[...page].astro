@@ -3,13 +3,13 @@ import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import RightClickMenu from "../components/RightClickMenu.astro";
-import { getAllPosts, sortMDByDate } from "../utils/posts";
+import { getAllPosts, nonHiddenPosts, sortMDByDate } from "../utils/posts";
 import DefaultMenu from "../components/DefaultMenu.astro";
 import Emoji from "../components/Emoji.astro";
 import Time from "../components/Time.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allPosts = await getAllPosts();
+    const allPosts = nonHiddenPosts(await getAllPosts());
     const allPostsByDate = sortMDByDate(allPosts);
     return paginate(allPostsByDate, { pageSize: Infinity });
 }) satisfies GetStaticPaths;

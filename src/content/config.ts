@@ -16,7 +16,7 @@ const post = defineCollection({
             publishDate: z
                 .string()
                 .or(z.date())
-                .transform((val) => new Date(val)),
+                .transform((val) => (val ? new Date(val) : new Date())),
             updatedDate: z
                 .string()
                 .or(z.date())
@@ -30,6 +30,7 @@ const post = defineCollection({
                 })
                 .optional(),
             draft: z.boolean().default(false),
+            hidden: z.boolean().default(false),
             tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
             ogImage: z.string().optional(),
             customSlug: z
