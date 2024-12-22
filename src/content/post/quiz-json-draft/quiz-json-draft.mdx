@@ -1,13 +1,13 @@
 ---
 title: JSON quiz draft
 publishDate: 2021-04-18
-customSlug: quizz-json-draft
+customSlug: quiz-json-draft
 isThought: true
 ---
 
 > A draft to create a JSON file for a quiz
 
-A quizz take twos majors parts :
+A quiz take twos majors parts :
 
 - information about the quiz
 - questions and answers in a `card` object
@@ -52,7 +52,7 @@ A quizz take twos majors parts :
 > - `versionQuiz`: a string, it contains the version of the quiz file (useful if we send quiz and have copy of them)
 > - `description`: an array of strings, it contains keywords to found the quiz
 > - `author`: an array of string, it contains the name of one ore multiple authors
-> - `name`: a `content object`, it contains the name of the quizz
+> - `name`: a `content object`, it contains the name of the quiz
 > - `description`: a `content object`, it contains a description of the quiz
 
 In the `name` and `description` fields, the `type` attribute of the `content object` is `string`. This attribute isn't required.
@@ -69,14 +69,14 @@ Each `card`contains 3 fields :
 {
     "title":{},
     "lesson": {},
-    "quizzes":[{}]
+    "quizes":[{}]
 }
 ```
 > Legend :
 >
 > - `title`: a `content object`, it contains the title of the card
 > - `lesson`: a `content object`, it contains the lesson of the card 
-> - `quizzes`: an array of  `quiz object`, it contains `quiz object`
+> - `quizes`: an array of  `quiz object`, it contains `quiz object`
 
 ## `quiz object`
 
