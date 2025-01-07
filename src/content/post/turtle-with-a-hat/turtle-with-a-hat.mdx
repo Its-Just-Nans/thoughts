@@ -7,7 +7,7 @@ isThought: true
 
 import { Image } from "astro:assets"
 
-export const Centered = ({children}) => {
+export const Centered = ({ children }) => {
     return (
         <div style="text-align:center">
             {children}
@@ -15,7 +15,7 @@ export const Centered = ({children}) => {
     )
 }
 
-export const CustomImg = ({alt, src})=>{
+export const CustomImg = ({ alt, src }) => {
     const imgStyle = {
         width: "30%"
     }
@@ -80,3 +80,18 @@ import Imgn4n5 from "./n4n5.png"
 <Centered>
     <CustomImg src={Imgn4n5} alt="turtle with hat - png file" />
 </Centered>
+
+<details>
+<summary>Miscellaneous</summary>
+
+```sh
+inkscape -o turtle_with_top_hat.png -w 256 -h 256 turtle_with_top_hat.svg
+```
+
+import ImgTopHat from "./turtle_with_top_hat.png"
+
+<Centered>
+    <CustomImg src={ImgTopHat} alt="turtle with top hat - png file" />
+</Centered>
+
+</details>
