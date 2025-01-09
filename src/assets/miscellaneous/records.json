@@ -19,5 +19,15 @@
         "type": "place",
         "name": "Serre Chevalier",
         "coords": [44.948705, 6.499966]
+    },
+    {
+        "type": "place",
+        "coords": [5.3712377, 43.2839533],
+        "name": "Basilique Notre-Dame de la Garde"
+    },
+    {
+        "type": "place",
+        "coords": [2.3562432, 48.8443437],
+        "name": "Muséum National d'Histoire Naturelle"
     }
 ]

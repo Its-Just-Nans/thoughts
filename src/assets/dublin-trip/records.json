@@ -8,5 +8,10 @@
         "type": "place",
         "name": "Jeanie Johnston",
         "coords": [53.3476291, -6.2467662]
+    },
+    {
+        "type": "place",
+        "coords": [-9.8893126, 53.5616392],
+        "name": "Kylemore Abbey"
     }
 ]

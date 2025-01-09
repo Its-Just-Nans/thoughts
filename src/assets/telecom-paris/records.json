@@ -16,5 +16,10 @@
         "date": "2021-12-06T21:24:45Z",
         "address": "147 Quai du Président Roosevelt, 92130 Issy-les-Moulineaux, France",
         "name": "Capgemini"
+    },
+    {
+        "type": "place",
+        "coords": [2.3521142, 48.8634376],
+        "name": "Espace Saint-Martin"
     }
 ]
