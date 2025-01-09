@@ -1,0 +1,23 @@
+[
+    {
+        "type": "place",
+        "name": "Auron",
+        "coords": [44.227181, 6.9281551],
+        "properties": {
+            "date": "2025-01-04"
+        }
+    },
+    {
+        "type": "place",
+        "name": "Fort Saint-Nicolas",
+        "coords": [43.2909984, 5.3623856],
+        "properties": {
+            "date": "2024-12-07"
+        }
+    },
+    {
+        "type": "place",
+        "name": "Serre Chevalier",
+        "coords": [44.948705, 6.499966]
+    }
+]

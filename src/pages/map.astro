@@ -3,7 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import MapPoints from "../components/MapPoints.astro";
 import type { PointsType } from "../types";
 
-const json = await Astro.glob("./../../src/assets/**/*.json");
+type jsonGlob = {
+    default: PointsType[];
+};
+
+const json = Object.values(
+    import.meta.glob("./../../src/assets/**/*.json", { eager: true })
+) as unknown[] as jsonGlob[];
 
 const points: PointsType = [];
 
