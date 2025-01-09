@@ -11,7 +11,7 @@
     },
     {
         "type": "place",
-        "coords": [-9.8893126, 53.5616392],
+        "coords": [53.5616392, -9.8893126],
         "name": "Kylemore Abbey"
     }
 ]

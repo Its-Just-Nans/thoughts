@@ -22,12 +22,12 @@
     },
     {
         "type": "place",
-        "coords": [5.3712377, 43.2839533],
+        "coords": [43.2839533, 5.3712377],
         "name": "Basilique Notre-Dame de la Garde"
     },
     {
         "type": "place",
-        "coords": [2.3562432, 48.8443437],
+        "coords": [48.8443437, 2.3562432],
         "name": "Muséum National d'Histoire Naturelle"
     }
 ]
