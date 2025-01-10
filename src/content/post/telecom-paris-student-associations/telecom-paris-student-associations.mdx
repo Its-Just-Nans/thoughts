@@ -7,13 +7,13 @@ isSchool: true
 
 > A brief description of my participation in student associations at Télécom Paris
 
-export const Style = ()=>{
+export const Style = () => {
     return (
         <style>
-        {`
+            {`
             .special-in-title{
                 margin: 5px;
-                text-align: center;
+                text-align: right;
             }
             .special-title {
                 display: flex;
@@ -64,25 +64,25 @@ import { Image } from "astro:assets"
 <Style />
 
 
-export const CustomImg = ({src, children})=>{
+export const CustomImg = ({ src, children }) => {
     const link = "https://bel-art.github.io/telecom-logos/"
     return (
         <div className="special-title">
             <a href={link} target="_blank">
-            {src && (
-                <Image src={src} alt="logo" className="special-img" height={200}/>
-            )}
+                {src && (
+                    <Image src={src} alt="logo" className="special-img" height={200} />
+                )}
             </a>
             <span className="special-in-title">
-            {children}
+                {children}
             </span>
         </div>
     )
 }
 
-export const Space = ()=> <br/>
+export const Space = () => <br />
 
-export const Website = ({job, children}) => {
+export const Website = ({ job, children }) => {
     return (
         <div class="website">
             <div class="job">{job}</div>

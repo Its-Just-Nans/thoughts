@@ -10,7 +10,7 @@ export async function getAllPosts() {
             }
             slugs.add(data.customSlug);
         }
-        if (data.draft) {
+        if (import.meta.env.DEV && data.draft) {
             console.log(`Draft post found: ${data.title}`);
         }
         return import.meta.env.PROD ? data.draft !== true : true;

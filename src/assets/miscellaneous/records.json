@@ -29,5 +29,25 @@
         "type": "place",
         "coords": [48.8418193, 2.3562677],
         "name": "Muséum National d'Histoire Naturelle"
+    },
+    {
+        "type": "place",
+        "coords": [48.860642, 2.352245],
+        "name": "Le Centre Pompidou"
+    },
+    {
+        "type": "place",
+        "coords": [48.860642, 2.352245],
+        "name": "Le Centre Pompidou"
+    },
+    {
+        "type": "place",
+        "coords": [48.8599614, 2.3265614],
+        "name": "Musée d'Orsay"
+    },
+    {
+        "type": "place",
+        "coords": [48.8583701, 2.2944813],
+        "name": "Tour Eiffel"
     }
 ]

@@ -5,9 +5,15 @@ customSlug: heritage-days-2024
 isEvent: true
 ---
 
-
 import MapPoints from "../../../components/MapPoints.astro"
 import points from "../../../assets/heritage-days-2024/records.json"
+
+import Thought from "../../../components/Thought.astro"
+
+<Thought>
+The great "Cité Radieuse" by [Le Corbusier](https://fr.wikipedia.org/wiki/Le_Corbusier)
+</Thought>
+
 
 <MapPoints points={points} height={400} zoom={11} view={[43.264,5.392]}/>
 
