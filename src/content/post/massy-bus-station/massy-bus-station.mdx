@@ -7,21 +7,102 @@ draft: true
 ---
 
 import { Image } from 'astro:assets';
-
-Wtf is this bus station?
-
-
-import oldStation from "./pole-de-massy-palaiseau.png"
+import Carousel from "astro-simple-carousel";
 
 
-export const CustomImage = ({ link, linkImg, alt }) => (
-  <a href={link} title={alt} style="text-align: center">
-    <Image src={oldStation} alt={alt}/>
-    <p>{alt}</p>
-  </a>
-);
+Massy bus station has a problem: it unnecessarily forces users to take stairs to access the bus station. While climbing stairs is beneficial for health, it is not ideal for individuals with reduced mobility, heavy luggage, or strollers. The lift, often proposed as a solution, is frequently out of service, rendering it unreliable.
 
-<CustomImage link={"https://www.quartier-atlantis.fr/nos-projets/une-desserte-exceptionnelle/"} linkImg={oldStation} alt={"Old bus station"} />
+export const Style = () => {
+  return (
+    <style>
+      {`
+      .center {
+        text-align: center;
+      }
+      .center ul {
+        text-align: left;
+      }
+      .center img {
+        border: 1px solid black;
+      }
+      .carousel-buttons-wrap button {
+        padding: 10px;
+      }
+      `}
+    </style>
+  )
+}
+
+<Style />
 
 
-Project about the station https://www.youtube.com/watch?v=mZVpbDRxupg
+import busStation2021 from "./2021_massy-bus-station.png"
+import busStation2022 from "./2022_massy-bus-station.png"
+import busStation2023 from "./2023_massy-bus-station.png"
+import busStation2024 from "./2024_massy-bus-station.png"
+
+<Carousel>
+  <div slot="1" class="center">
+    <p>2021 bus station</p>
+    <Image src={busStation2021} alt="2021 bus station" />
+    <ul>
+      <li>Bicycle lanes are in purple</li>
+      <li>There was ample space for pedestrians.</li>
+      <li>Buses followed a counterclockwise rotation. The pedestrian drop-off area was conveniently located near the city, one the right side of the road.</li>
+    </ul>
+    <hr />
+  </div>
+  <div slot="2" class="center">
+    <p>2022 bus station</p>
+    <Image src={busStation2022} alt="2022 bus station" />
+    <ul>
+      <li>The bus station was closed for roadworks.</li>
+      <li>A temporary, smaller bus station was established.</li>
+      <li>The bicycle lane was officially unmaintained, forcing cyclists to share the road with vehicles.</li>
+    </ul>
+    <hr />
+  </div>
+  <div slot="3" class="center">
+    <p>2023 bus station</p>
+    <Image src={busStation2023} alt="2023 bus station" />
+    <ul>
+    <li>The new bus station became operational, with buses now following a clockwise rotation.</li>
+    <li>With the clockwise rotation, the pedestrian drop-off area was relocated to a tiny island in the middle of the bus lanes.</li>
+    <li>Due to the clockwise rotation, buses now cross each other at the station's entrance (not shown in the image), increasing the risk of accidents.</li>
+    <li>A footbridge was constructed, but it was initially unused as pedestrians preferred to walk through the bus station alongside the buses to exit, avoiding unnecessary effort, though this was dangerous due to proximity to moving vehicles.</li>
+    </ul>
+    <hr />
+  </div>
+  <div slot="4" class="center">
+    <p>2024 bus station</p>
+    <Image src={busStation2024} alt="2024 bus station" />
+    <ul>
+      <li>Usage of the footbridge became mandatory, causing confusion for newcomers unsure of the correct bus stop location. Many avoid using the footbridge, fearing they might climb it unnecessarily and potentially miss their bus.</li>
+      <li>The station's usability declined significantly for individuals with reduced mobility.</li>
+    </ul>
+    <hr />
+  </div>
+</Carousel>
+
+
+The biggest problem—and the one that's hardest to understand—is the change in the bus rotation. This change fundamentally altered the entire design and functionality of the bus station, yet it brought no clear benefits.
+
+By switching from a counterclockwise to a clockwise rotation, the station's layout became less intuitive and more confusing for both regular users and newcomers. The new design disrupted pedestrian flow, reduced accessibility, and introduced unnecessary obstacles like the mandatory use of the footbridge. These changes not only fail to improve the user experience but actively make the station less practical for everyone, especially those with mobility challenges.
+
+
+import finalProject from "./final-project.png"
+
+<div class="center">
+  <Image src={finalProject} alt="Final project" />
+  <p>Final project simulation</p>
+</div>
+
+---
+
+Apparently, the final project will look like this, featuring an extremely long footbridge 😟. I can only hope that pedestrians will be allowed to walk freely and not be forced to use the footbridge. However, if that happens, pedestrians will face the risk of walking near buses, which is far from ideal.
+
+I also hope the final project includes a new bicycle lane, as the current setup leaves cyclists without a safe and dedicated space, forcing them to share the road with buses and other vehicles.
+
+Credits and references:
+- https://www.quartier-atlantis.fr/nos-projets/une-desserte-exceptionnelle/
+- Video about the station https://www.youtube.com/watch?v=mZVpbDRxupg
