@@ -13,6 +13,9 @@ export async function getAllPosts() {
         if (import.meta.env.DEV && data.draft) {
             console.log(`Draft post found: ${data.title}`);
         }
+        if (import.meta.env.DEV && data.hidden) {
+            console.log(`Hidden post found: ${data.title}`);
+        }
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 }
