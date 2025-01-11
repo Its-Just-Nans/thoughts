@@ -1,0 +1,50 @@
+---
+const project = "thoughts";
+const site = "https://n4n5.dev";
+const repo = `https://github.com/Its-Just-Nans/${project}`;
+const rss = `/rss.xml`;
+
+let idx = 0;
+const g = () => {
+    return project[idx++]; // crash if wrong
+};
+---
+
+<h1 class="title">
+    <a
+        class="link-title"
+        href={site}
+        target="_blank"
+        title="main website"
+        aria-label="webpage title is hiding a link to main website">{g()}</a
+    >
+    <span class="link-title">{g()}</span>
+    <a
+        class="link-title"
+        href={rss}
+        target="_blank"
+        title="rss feed"
+        aria-label="webpage title is hiding a link to rss feed">{g() + g()}</a
+    >
+    <span class="link-title">{g() + g() + g()}</span>
+    <a
+        class="link-title"
+        href={repo}
+        target="_blank"
+        title="github repo"
+        aria-label="webpage title is hiding a link to github repo">{g()}</a
+    >
+</h1>
+
+<style>
+    .title {
+        display: inline-flex;
+    }
+    .link-title {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

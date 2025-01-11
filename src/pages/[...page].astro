@@ -7,6 +7,8 @@ import { getAllPosts, nonHiddenPosts, sortMDByDate } from "../utils/posts";
 import DefaultMenu from "../components/DefaultMenu.astro";
 import Emoji from "../components/Emoji.astro";
 import Time from "../components/Time.astro";
+import TitleLinks from "../components/TitleLinks.astro";
+import Title from "../components/Title.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = nonHiddenPosts(await getAllPosts());
@@ -16,20 +18,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 interface Props {
     page: Page<CollectionEntry<"post">>;
-    uniqueTags: string[];
 }
 
 const { page } = Astro.props;
-
-const project = "thoughts";
-const site = "https://n4n5.dev";
-const repo = `https://github.com/Its-Just-Nans/${project}`;
-const rss = `/rss.xml`;
-
-let idx = 0;
-const g = () => {
-    return project[idx++]; // crash if wrong
-};
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
@@ -37,36 +28,8 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
 <Layout title="thoughts">
     <div class="inner-body">
         <div class="title-div">
-            <h1 class="title">
-                <a
-                    class="link-title"
-                    href={site}
-                    target="_blank"
-                    title="main website"
-                    aria-label="webpage title is hiding a link to main website">{g()}</a
-                >
-                <span class="link-title">{g()}</span>
-                <a
-                    class="link-title"
-                    href={rss}
-                    target="_blank"
-                    title="rss feed"
-                    aria-label="webpage title is hiding a link to rss feed">{g() + g()}</a
-                >
-                <span class="link-title">{g() + g() + g()}</span>
-                <a
-                    class="link-title"
-                    href={repo}
-                    target="_blank"
-                    title="github repo"
-                    aria-label="webpage title is hiding a link to github repo">{g()}</a
-                >
-            </h1>
-            <div>
-                <a href="/map" target="_blank" title="map" aria-label="a link to a map" class="link-map">
-                    <img src="/images/map.png" class="map-img" alt="map" />
-                </a>
-            </div>
+            <Title />
+            <TitleLinks />
         </div>
         {
             page.data.length > 0 && (
@@ -152,13 +115,6 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
     #isDev:checked ~ ul .isDev {
         display: var(--original-display);
     }
-    .title {
-        display: inline-flex;
-    }
-    .link-title {
-        color: inherit;
-        text-decoration: inherit;
-    }
     .title-div {
         display: flex;
         justify-content: space-around;
@@ -206,21 +162,6 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
         text-decoration: none;
         display: inline-block;
         text-transform: lowercase;
-    }
-    .map-img {
-        --width: 32px;
-        --hover-width: 42px;
-        width: var(--width);
-        height: var(--width);
-        margin: calc((var(--hover-width) - var(--width)) / 2);
-    }
-    .map-img:hover {
-        width: var(--hover-width);
-        height: var(--hover-width);
-        margin: 0px;
-    }
-    .link-map {
-        -webkit-tap-highlight-color: transparent;
     }
 
     @media screen and (max-width: 800px) {
