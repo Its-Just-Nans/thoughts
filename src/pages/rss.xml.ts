@@ -1,9 +1,9 @@
 import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
-import { getAllPosts, nonHiddenPosts, sortMDByDate } from "../utils/posts";
+import { filterHidden, getAllPosts, sortMDByDate } from "../utils/posts";
 
 export async function GET(context: APIContext) {
-    const allPosts = nonHiddenPosts(await getAllPosts());
+    const allPosts = filterHidden(await getAllPosts());
     const allPostsByDate = sortMDByDate(allPosts, true);
     const customData = {
         language: "en-EN",
