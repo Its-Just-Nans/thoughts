@@ -17,7 +17,7 @@ const data = filterHidden(await getAllPosts(), true);
                     <section>
                         <ul class="emoji-controller hide-emoji">
                             {data.map(async (p) => (
-                                <OneLineThought post={p} />
+                                <OneLineThought post={p} absSlug />
                             ))}
                         </ul>
                     </section>
