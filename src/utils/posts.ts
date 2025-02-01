@@ -13,17 +13,14 @@ export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
         if (import.meta.env.DEV && data.draft) {
             console.log(`Draft post found: ${data.title}`);
         }
-        if (import.meta.env.DEV && data.hidden) {
-            console.log(`Hidden post found: ${data.title}`);
-        }
+        // if (import.meta.env.DEV && data.hidden) {
+        //     console.log(`Hidden post found: ${data.title}`);
+        // }
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 }
 
-export const filterHidden = (
-    posts: CollectionEntry<"post">[],
-    value = false
-): CollectionEntry<"post">[] => {
+export const filterHidden = (posts: CollectionEntry<"post">[], value = false): CollectionEntry<"post">[] => {
     return posts.filter((post) => post.data.hidden == value);
 };
 
