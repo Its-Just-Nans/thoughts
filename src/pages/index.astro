@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RightClickMenu from "../components/RightClickMenu.astro";
+import { getAllPosts, filterHidden, sortMDByDate } from "../utils/posts";
+import DefaultMenu from "../components/DefaultMenu.astro";
+import TitleLinks from "../components/TitleLinks.astro";
+import Title from "../components/Title.astro";
+import OneLineThought from "../components/OneLineThought.astro";
+
+const data = sortMDByDate(filterHidden(await getAllPosts()));
+---
+
+<Layout title="thoughts">
+    <div class="inner-body">
+        <div class="title-div">
+            <Title />
+            <TitleLinks />
+        </div>
+        {
+            data.length > 0 && (
+                <div>
+                    <section>
+                        <input id="isAll" name="selector" class="selector" type="radio" value="all" checked />
+                        <input id="isWork" name="selector" class="selector" type="radio" value="work" />
+                        <input id="isSchool" name="selector" class="selector" type="radio" value="school" />
+                        <input id="isThought" name="selector" class="selector" type="radio" value="thought" />
+                        <input id="isEvent" name="selector" class="selector" type="radio" value="event" />
+                        <input id="isDev" name="selector" class="selector" type="radio" value="dev" />
+                        <ul class="emoji-controller hide-emoji">
+                            {data.map(async (p) => (
+                                <OneLineThought post={p} />
+                            ))}
+                        </ul>
+                    </section>
+                </div>
+            )
+        }
+    </div>
+    <RightClickMenu>
+        <DefaultMenu />
+    </RightClickMenu>
+</Layout>
+
+<style>
+    .hide-emoji :global(.emoji) {
+        display: none;
+    }
+    .selector {
+        display: none;
+    }
+
+    #isAll:checked ~ ul :global(.article) {
+        display: var(--original-display);
+    }
+    #isWork:checked ~ ul :global(.isWork) {
+        display: var(--original-display);
+    }
+    #isThought:checked ~ ul :global(.isThought) {
+        display: var(--original-display);
+    }
+    #isEvent:checked ~ ul :global(.isEvent) {
+        display: var(--original-display);
+    }
+    #isSchool:checked ~ ul :global(.isSchool) {
+        display: var(--original-display);
+    }
+    #isDev:checked ~ ul :global(.isDev) {
+        display: var(--original-display);
+    }
+    .title-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .inner-body {
+        padding: 0 20px;
+        margin: auto;
+        max-width: 800px;
+    }
+
+    .hide-emoji :global(.line-effect) {
+        width: fit-content;
+    }
+
+    @media screen and (max-width: 800px) {
+        ul {
+            padding-inline-start: 15px;
+        }
+    }
+</style>

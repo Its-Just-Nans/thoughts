@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
     const slugs = new Set();
     return await getCollection("post", ({ data }) => {
         if (data.customSlug) {
@@ -20,11 +20,14 @@ export async function getAllPosts() {
     });
 }
 
-export const nonHiddenPosts = (posts: CollectionEntry<"post">[]) => {
-    return posts.filter((post) => !post.data.hidden);
+export const filterHidden = (
+    posts: CollectionEntry<"post">[],
+    value = false
+): CollectionEntry<"post">[] => {
+    return posts.filter((post) => post.data.hidden == value);
 };
 
-export function sortMDByDate(posts: CollectionEntry<"post">[], useUpdatedDate = false) {
+export function sortMDByDate(posts: CollectionEntry<"post">[], useUpdatedDate = false): CollectionEntry<"post">[] {
     return posts.sort((a, b) => {
         const aDate = new Date(
             useUpdatedDate ? (a.data.updatedDate ?? a.data.publishDate) : a.data.publishDate

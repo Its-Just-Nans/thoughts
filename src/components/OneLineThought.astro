@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Emoji from "./Emoji.astro";
+import Time from "./Time.astro";
+
+interface Props {
+    post: CollectionEntry<"post">;
+}
+
+const { post: p } = Astro.props;
+// const article = await p.render();
+const slug = p.data.customSlug || p.slug;
+
+const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+---
+
+<li
+    class="article line-effect"
+    class:list={[
+        {
+            isWork: p.data.isWork,
+            isDev: p.data.isDev,
+            isSchool: p.data.isSchool,
+            isThought: p.data.isThought,
+            isEvent: p.data.isEvent,
+        },
+    ]}
+>
+    <a href={slug} class="article-link">
+        <div class="link-wrap">
+            <span class="date">
+                <Time date={p.data.publishDate} />
+            </span>
+            <span class="link-dash">-</span>
+            <span class="link-title">{removeAccents(p.data.title)}</span>
+        </div>
+    </a>
+    <div class="emoji">
+        <Emoji data={p.data} flex={true} />
+    </div>
+</li>
+
+<style>
+    .article {
+        display: none;
+        justify-content: space-between;
+        --original-display: flex;
+        margin-bottom: 10px;
+    }
+    .line-effect::before {
+        content: " ";
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        inset: 0 0 0 0;
+        background: Gainsboro;
+        z-index: -1;
+        transition: transform 0.3s ease;
+    }
+    .line-effect:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .line-effect {
+        width: auto;
+        position: relative;
+    }
+    .date {
+        /* monospaced font */
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.8em;
+    }
+    .article-link {
+        color: black;
+        -webkit-tap-highlight-color: transparent;
+        flex: 1;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: lowercase;
+    }
+</style>

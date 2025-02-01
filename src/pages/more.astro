@@ -1,0 +1,51 @@
+---
+import OneLineThought from "../components/OneLineThought.astro";
+import Layout from "../layouts/Layout.astro";
+import { filterHidden, getAllPosts } from "../utils/posts";
+
+const data = filterHidden(await getAllPosts(), true);
+---
+
+<Layout title="more thoughts">
+    <div class="inner-body">
+        <div class="title-div">
+            <h1>more thoughts</h1>
+        </div>
+        {
+            data.length > 0 && (
+                <div>
+                    <section>
+                        <ul class="emoji-controller hide-emoji">
+                            {data.map(async (p) => (
+                                <OneLineThought post={p} />
+                            ))}
+                        </ul>
+                    </section>
+                </div>
+            )
+        }
+    </div>
+</Layout>
+
+<style>
+    .title-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .inner-body {
+        padding: 0 20px;
+        margin: auto;
+        max-width: 800px;
+    }
+    :global(.article) {
+        display: flex !important;
+        justify-content: space-between !important;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 800px) {
+        ul {
+            padding-inline-start: 15px;
+        }
+    }
+</style>
