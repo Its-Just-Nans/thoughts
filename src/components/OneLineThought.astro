@@ -11,7 +11,8 @@ interface Props {
 const { post: p, absSlug = false } = Astro.props;
 // const article = await p.render();
 const slug = p.data.customSlug || p.slug;
-const href = absSlug ? `/${slug}/` : `${slug}/`;
+const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
+const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
