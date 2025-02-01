@@ -12,11 +12,11 @@ const { title, description = "thoughts" } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="prefetch" href="/images/n4n5.png" />
         <title>{title}</title>
+        <!-- No SEO -->
     </head>
     <body>
         <slot />
