@@ -5,11 +5,41 @@ const { data, flex = false } = Astro.props;
 ---
 
 <span class="emoji-wrap" class:list={[{ "emoji-flex": flex }]}>
-    <span class="emoji-place" title="School related">{data.isSchool && isSchool}</span>
-    <span class="emoji-place" title="Dev related">{data.isDev && isDev}</span>
-    <span class="emoji-place" title="Work related">{data.isWork && isWork}</span>
-    <span class="emoji-place" title="A thought">{data.isThought && isThought}</span>
-    <span class="emoji-place" title="An event">{data.isEvent && isEvent}</span>
+    {
+        data.isSchool && (
+            <span class="emoji-place" title="School related">
+                {isSchool}
+            </span>
+        )
+    }
+    {
+        data.isDev && (
+            <span class="emoji-place" title="Dev related">
+                {isDev}
+            </span>
+        )
+    }
+    {
+        data.isWork && (
+            <span class="emoji-place" title="Work related">
+                {isWork}
+            </span>
+        )
+    }
+    {
+        data.isThought && (
+            <span class="emoji-place" title="A thought">
+                {isThought}
+            </span>
+        )
+    }
+    {
+        data.isEvent && (
+            <span class="emoji-place" title="An event">
+                {isEvent}
+            </span>
+        )
+    }
 </span>
 
 <style>
