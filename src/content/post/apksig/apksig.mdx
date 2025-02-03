@@ -7,10 +7,31 @@ isDev: true
 
 apksig is a tiny tool to explore the APK Signing Block
 
-Try the demo at [n4n5.dev/apksig](https://n4n5.dev/apksig/)!
+Try the demo at https://n4n5.dev/apksig/!
 
 Links:
 
 - https://docs.rs/apksig - documentation
 - https://n4n5.dev/apksig/ - online demo
 - https://github.com/Its-Just-Nans/apksig - repository
+- https://source.android.com/docs/security/features/apksigning - documentation on APK signing
+
+---
+
+import Thought from "../../../components/Thought.astro"
+
+<Thought>
+
+To get the same result as
+
+```bash
+apksigner verify --print-certs example.apk
+```
+
+you need to hash the certificate value of the scheme from the APK Signing Block.
+
+<br />
+
+Fortunately, the demo (https://n4n5.dev/apksig/) hashes every array, so you can effectively see the hashes of the certificate value.
+
+</Thought>
