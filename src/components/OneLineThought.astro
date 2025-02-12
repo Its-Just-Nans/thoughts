@@ -13,6 +13,7 @@ const { post: p, absSlug = false } = Astro.props;
 const slug = p.data.customSlug || p.slug;
 const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
 const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
+const { isWork, isDev, isSchool, isThought, isEvent } = p.data;
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
@@ -21,11 +22,11 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
     class="article line-effect"
     class:list={[
         {
-            isWork: p.data.isWork,
-            isDev: p.data.isDev,
-            isSchool: p.data.isSchool,
-            isThought: p.data.isThought,
-            isEvent: p.data.isEvent,
+            isWork,
+            isDev,
+            isSchool,
+            isThought,
+            isEvent,
         },
     ]}
 >
