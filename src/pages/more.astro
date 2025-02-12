@@ -9,7 +9,7 @@ const data = filterHidden(await getAllPosts(), true);
 <Layout title="more thoughts">
     <div class="inner-body">
         <div class="title-div">
-            <h1>more thoughts</h1>
+            <h1>more <a href="../">thoughts</a></h1>
         </div>
         {
             data.length > 0 && (
@@ -28,6 +28,13 @@ const data = filterHidden(await getAllPosts(), true);
 </Layout>
 
 <style>
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
     .title-div {
         display: flex;
         justify-content: space-around;
