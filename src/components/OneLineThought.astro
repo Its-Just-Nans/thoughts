@@ -13,7 +13,7 @@ const { post: p, absSlug = false } = Astro.props;
 const slug = p.data.customSlug || p.slug;
 const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
 const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
-const { isWork, isDev, isSchool, isThought, isEvent } = p.data;
+const { isWork, isDev, isSchool, isThought, isEvent, draft } = p.data;
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
@@ -32,6 +32,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
 >
     <a href={href} class="article-link">
         <div class="link-wrap">
+            {draft && <span class="draft">draft</span>}
             <span class="date">
                 <Time date={p.data.publishDate} />
             </span>
@@ -45,6 +46,11 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
 </li>
 
 <style>
+    .draft {
+        color: red;
+        font-weight: bold;
+        text-decoration: underline;
+    }
     .article {
         display: none;
         justify-content: space-between;
