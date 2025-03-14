@@ -3,12 +3,13 @@ import { getCollection } from "astro:content";
 
 export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
     const slugs = new Set();
-    return await getCollection("post", ({ data }) => {
-        if (data.customSlug) {
-            if (slugs.has(data.customSlug)) {
-                throw new Error(`Duplicate slug found: ${data.customSlug} in ${data.title}`);
-            }
-            slugs.add(data.customSlug);
+    return await getCollection("post", (post) => {
+        const { data } = post;
+        const slug = getEntrySlug(post);
+        if (slugs.has(slug)) {
+            throw new Error(`Duplicate slug found: ${slug} in ${data.title}`);
+        } else {
+            slugs.add(slug);
         }
         if (import.meta.env.DEV && data.draft) {
             console.log(`Draft post found: ${data.title}`);
