@@ -35,3 +35,14 @@ export function sortMDByDate(posts: CollectionEntry<"post">[], useUpdatedDate = 
         return bDate - aDate;
     });
 }
+
+export const getEntrySlug = (post: CollectionEntry<"post">): string => {
+    if (post.data.customSlug) {
+        return post.data.customSlug;
+    }
+    const idxSlash = post.slug.lastIndexOf("/");
+    if (idxSlash >= 0) {
+        return post.slug.substring(idxSlash + 1);
+    }
+    return post.slug;
+};

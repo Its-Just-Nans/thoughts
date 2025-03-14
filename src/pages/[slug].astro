@@ -2,7 +2,7 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
 import Layout from "../layouts/Layout.astro";
-import { getAllPosts } from "../utils/posts";
+import { getAllPosts, getEntrySlug } from "../utils/posts";
 import "../styles/markdown.css";
 import "../styles/tooltip.css";
 import Emoji from "../components/Emoji.astro";
@@ -10,10 +10,13 @@ import Time from "../components/Time.astro";
 
 export const getStaticPaths = (async () => {
     const articles = await getAllPosts();
-    return articles.map((entry) => ({
-        params: { slug: entry.data.customSlug || entry.slug },
-        props: { entry, data: entry.data },
-    }));
+    return articles.map((entry) => {
+        const slug = getEntrySlug(entry);
+        return {
+            params: { slug },
+            props: { entry, data: entry.data },
+        };
+    });
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
