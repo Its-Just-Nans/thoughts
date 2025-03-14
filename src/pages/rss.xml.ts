@@ -1,6 +1,6 @@
 import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
-import { filterHidden, getAllPosts, sortMDByDate } from "../utils/posts";
+import { filterHidden, getAllPosts, getEntrySlug, sortMDByDate } from "../utils/posts";
 
 export async function GET(context: APIContext) {
     const allPosts = filterHidden(await getAllPosts());
@@ -16,22 +16,26 @@ export async function GET(context: APIContext) {
             acc += `<${key}>${value}</${key}>\n`;
             return acc;
         }, "");
-
     return rss({
         title: "Thoughts of n4n5",
         description: "RSS feed for thoughts by n4n5",
         site: context.site || new URL("https://thoughts.n4n5.dev"),
-        items: allPostsByDate.map((post) => ({
-            title: post.data.title,
-            pubDate: post.data.updatedDate ?? post.data.publishDate,
-            link: `/${post.data.customSlug ?? post.slug}/`,
-            ...(post.data.updatedDate && {
-                customData: objToXml({
-                    updatedDate: post.data.updatedDate.toISOString(),
-                    publishDate: post.data.publishDate.toISOString(),
+        items: allPostsByDate.map((post) => {
+            const { updatedDate, publishDate } = post.data;
+            const pubDate = updatedDate ?? publishDate;
+            const slug = getEntrySlug(post);
+            return {
+                title: post.data.title,
+                pubDate,
+                link: `/${slug}/`,
+                ...(updatedDate && {
+                    customData: objToXml({
+                        updatedDate: updatedDate.toISOString(),
+                        publishDate: publishDate.toISOString(),
+                    }),
                 }),
-            }),
-        })),
+            };
+        }),
         customData: objToXml(customData),
     });
 }
