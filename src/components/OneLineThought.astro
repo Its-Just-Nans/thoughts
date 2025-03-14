@@ -2,18 +2,20 @@
 import type { CollectionEntry } from "astro:content";
 import Emoji from "./Emoji.astro";
 import Time from "./Time.astro";
+import { getEntrySlug } from "../utils/posts";
 
 interface Props {
     post: CollectionEntry<"post">;
     absSlug?: boolean;
 }
 
-const { post: p, absSlug = false } = Astro.props;
+const { post, absSlug = false } = Astro.props;
 // const article = await p.render();
-const slug = p.data.customSlug || p.slug;
+const slug = getEntrySlug(post);
 const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
 const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
-const { isWork, isDev, isSchool, isThought, isEvent, draft } = p.data;
+const { isWork, isDev, isSchool, isThought, isEvent, draft } = post.data;
+const { title, publishDate } = post.data;
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
@@ -34,14 +36,14 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
         <div class="link-wrap">
             {draft && <span class="draft">draft</span>}
             <span class="date">
-                <Time date={p.data.publishDate} />
+                <Time date={publishDate} />
             </span>
             <span class="link-dash">-</span>
-            <span class="link-title">{removeAccents(p.data.title)}</span>
+            <span class="link-title">{removeAccents(title)}</span>
         </div>
     </a>
     <div class="emoji">
-        <Emoji data={p.data} flex={true} />
+        <Emoji data={post.data} flex={true} />
     </div>
 </li>
 
