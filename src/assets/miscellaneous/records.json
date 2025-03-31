@@ -1,6 +1,11 @@
 [
     {
         "type": "place",
+        "name": "",
+        "coords": [35.3693436, 24.5320441]
+    },
+    {
+        "type": "place",
         "name": "Auron",
         "coords": [44.227181, 6.9281551],
         "properties": {
@@ -49,5 +54,53 @@
         "type": "place",
         "coords": [48.8583701, 2.2944813],
         "name": "Tour Eiffel"
+    },
+    {
+        "type": "place",
+        "coords": [48.8704239, 2.3475736],
+        "name": "Le Grand Rex",
+        "properties": {
+            "date": "2025-03-28"
+        }
+    },
+    {
+        "type": "place",
+        "coords": [48.8695841, 2.3521495],
+        "name": "Wokantine",
+        "properties": {
+            "date": "2025-03-28"
+        }
+    },
+    {
+        "type": "place",
+        "coords": [48.8220314, 2.3259241],
+        "name": "La Rotonde",
+        "properties": {
+            "date": "2025-03-29"
+        }
+    },
+    {
+        "type": "place",
+        "coords": [48.8441234, 2.3492884],
+        "name": "Cantina - creperie",
+        "properties": {
+            "date": "2025-03-29"
+        }
+    },
+    {
+        "type": "place",
+        "coords": [48.8543436, 2.3718375],
+        "name": "Phở Passion",
+        "properties": {
+            "date": "2025-03-29"
+        }
+    },
+    {
+        "type": "place",
+        "coords": [48.8441234, 2.3492884],
+        "name": "Cantina - creperie",
+        "properties": {
+            "date": "2025-03-29"
+        }
     }
 ]
