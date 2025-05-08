@@ -1,7 +1,6 @@
 ---
 title: Journées FedeRez
 publishDate: 2023-06-03
-customSlug: journee-federez
 isEvent: true
 ---
 
@@ -18,10 +17,11 @@ I went to the talk about:
 import { Image } from "astro:assets";
 
 import logo from "./federez.png";
+import Center from "../../../components/Center.astro";
 
-<div style="text-align: center">
+<Center>
     <div>https://federez.net/</div>
     <br />
     <Image src={logo} alt="logo" height={100}/>
-</div>
+</Center>
 
