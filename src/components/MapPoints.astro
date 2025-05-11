@@ -41,4 +41,20 @@ const { points, height, zoom = 4, view = franceView } = Astro.props;
     });
 
     map.setView(view, zoom);
+
+    map.addEventListener("contextmenu", function (event) {
+        navigator.clipboard.writeText(
+            JSON.stringify(
+                {
+                    type: "place",
+                    coords: event.latlng,
+                    name: "",
+                },
+                null,
+                2
+            )
+        );
+
+        return false;
+    });
 </script>

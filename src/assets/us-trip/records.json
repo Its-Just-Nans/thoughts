@@ -1,0 +1,75 @@
+[
+    {
+        "type": "place",
+        "coords": {
+            "lat": 33.00431780011619,
+            "lng": -96.77163898944855
+        },
+        "name": "Walmart"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 33.02511311250441,
+            "lng": -96.76852762699129
+        },
+        "name": "Cinemark Plano"
+    },
+    { "type": "place", "coords": { "lat": 32.77530472328714, "lng": -96.80895388126373 }, "name": "Reunion Tower" },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.77855215399574,
+            "lng": -96.79917454719545
+        },
+        "name": "Spirit of Communication"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.832149198011635,
+            "lng": -96.78172409534454
+        },
+        "name": "Katy Trail"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.78144316966689,
+            "lng": -96.79832160472871
+        },
+        "name": "Giant Eye"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.789479789835795,
+            "lng": -96.80154025554658
+        },
+        "name": "Klyde Warren Park"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.78422134270146,
+            "lng": -96.77884876728059
+        },
+        "name": "Sky Rocket Burger"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.7787235428795,
+            "lng": -96.80643796920778
+        },
+        "name": "JFK Memorial"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.79983342187646,
+            "lng": -96.83757841587067
+        },
+        "name": "Bouldering Project"
+    }
+]
