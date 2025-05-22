@@ -1,5 +1,5 @@
-export const isSchool = "👨‍🎓";
-export const isDev = "👨‍💻";
-export const isWork = "💼";
-export const isThought = "💭";
-export const isEvent = "🎟️";
+export const isSchoolIco = "👨‍🎓";
+export const isDevIco = "👨‍💻";
+export const isWorkIco = "💼";
+export const isThoughtIco = "💭";
+export const isEventIco = "🎟️";

@@ -1,21 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RightClickMenu from "../components/RightClickMenu.astro";
-import { getAllPosts, filterHidden, sortMDByDate } from "../utils/posts";
+import CentralBody from "../components/CentralBody.astro";
+import { getAllPosts, filterHidden, sortMDByDate, getAllTags } from "../utils/posts";
 import DefaultMenu from "../components/DefaultMenu.astro";
-import TitleLinks from "../components/TitleLinks.astro";
-import Title from "../components/Title.astro";
-import OneLineThought from "../components/OneLineThought.astro";
+import TitleDiv from "../components/TitleDiv.astro";
+import ThoughtList from "../components/ThoughtList.astro";
+import AllTags from "../components/AllTags.astro";
 
 const data = sortMDByDate(filterHidden(await getAllPosts()));
+const tags = getAllTags(data);
 ---
 
 <Layout title="thoughts">
-    <div class="inner-body">
-        <div class="title-div">
-            <Title />
-            <TitleLinks />
-        </div>
+    <CentralBody>
+        <TitleDiv />
         {
             data.length > 0 && (
                 <div>
@@ -26,66 +25,39 @@ const data = sortMDByDate(filterHidden(await getAllPosts()));
                         <input id="isThought" name="selector" class="selector" type="radio" value="thought" />
                         <input id="isEvent" name="selector" class="selector" type="radio" value="event" />
                         <input id="isDev" name="selector" class="selector" type="radio" value="dev" />
-                        <ul class="emoji-controller hide-emoji">
-                            {data.map(async (p) => (
-                                <OneLineThought post={p} />
-                            ))}
-                        </ul>
+                        <ThoughtList data={data} />
+                        <AllTags tags={tags} />
                     </section>
                 </div>
             )
         }
-    </div>
+    </CentralBody>
     <RightClickMenu>
         <DefaultMenu />
     </RightClickMenu>
 </Layout>
 
 <style>
-    .hide-emoji :global(.emoji) {
-        display: none;
-    }
     .selector {
         display: none;
     }
 
-    #isAll:checked ~ ul :global(.article) {
+    :global(#isAll:checked ~ ul .article) {
         display: var(--original-display);
     }
-    #isWork:checked ~ ul :global(.isWork) {
+    :global(#isWork:checked ~ ul .tag-job) {
         display: var(--original-display);
     }
-    #isThought:checked ~ ul :global(.isThought) {
+    :global(#isThought:checked ~ ul .tag-thought) {
         display: var(--original-display);
     }
-    #isEvent:checked ~ ul :global(.isEvent) {
+    :global(#isEvent:checked ~ ul .tag-event) {
         display: var(--original-display);
     }
-    #isSchool:checked ~ ul :global(.isSchool) {
+    :global(#isSchool:checked ~ ul .tag-thought) {
         display: var(--original-display);
     }
-    #isDev:checked ~ ul :global(.isDev) {
+    :global(#isDev:checked ~ ul .tag-dev) {
         display: var(--original-display);
-    }
-    .title-div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .inner-body {
-        padding: 0 20px;
-        margin: auto;
-        max-width: 800px;
-    }
-
-    .hide-emoji :global(.line-effect) {
-        width: fit-content;
-    }
-
-    @media screen and (max-width: 800px) {
-        ul {
-            padding-inline-start: 15px;
-        }
     }
 </style>

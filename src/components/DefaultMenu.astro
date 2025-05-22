@@ -1,5 +1,5 @@
 ---
-import { isSchool, isDev, isWork, isThought, isEvent } from "../utils/menus";
+import { isSchoolIco, isDevIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/menus";
 import GithubIcon from "./GithubIcon.astro";
 const menus = [
     [
@@ -21,7 +21,7 @@ const menus = [
     ],
     [
         {
-            ico: isSchool,
+            ico: isSchoolIco,
             title: "only study",
             id: "only-study",
             link: null,
@@ -36,7 +36,7 @@ const menus = [
             },
         },
         {
-            ico: isDev,
+            ico: isDevIco,
             id: "only-dev",
             link: null,
             title: "only dev",
@@ -51,7 +51,7 @@ const menus = [
             },
         },
         {
-            ico: isWork,
+            ico: isWorkIco,
             title: "only work",
             id: "only-work",
             link: null,
@@ -66,7 +66,7 @@ const menus = [
             },
         },
         {
-            ico: isThought,
+            ico: isThoughtIco,
             title: "only thoughts",
             id: "only-thoughts",
             link: null,
@@ -81,7 +81,7 @@ const menus = [
             },
         },
         {
-            ico: isEvent,
+            ico: isEventIco,
             title: "only events",
             id: "only-events",
             link: null,
@@ -172,7 +172,7 @@ const menus = [
         link.addEventListener("click", () => {
             document.querySelector(".menu").style.display = "none";
         });
-    }); 
+    });
     if (localStorage.getItem("isEmoji")) {
         const el = document.getElementsByClassName("emoji-controller");
         el[0].classList.toggle("hide-emoji");

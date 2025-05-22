@@ -14,24 +14,14 @@ const { post, absSlug = false } = Astro.props;
 const slug = getEntrySlug(post);
 const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
 const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
-const { isWork, isDev, isSchool, isThought, isEvent, draft } = post.data;
+const { draft } = post.data;
 const { title, publishDate } = post.data;
+const tagsClass = post.data.tags.map((tag) => `tag-${tag}`);
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
 
-<li
-    class="article line-effect"
-    class:list={[
-        {
-            isWork,
-            isDev,
-            isSchool,
-            isThought,
-            isEvent,
-        },
-    ]}
->
+<li class="article line-effect" class:list={tagsClass}>
     <a href={href} class="article-link">
         <div class="link-wrap">
             {draft && <span class="draft">draft</span>}

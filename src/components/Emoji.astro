@@ -1,42 +1,48 @@
 ---
-import { isSchool, isDev, isWork, isThought, isEvent } from "../utils/menus";
+import type { InferEntrySchema } from "astro:content";
+import { isSchoolIco, isDevIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/menus";
+
+interface Props {
+    data: InferEntrySchema<"post">;
+    flex?: boolean;
+}
 
 const { data, flex = false } = Astro.props;
 ---
 
 <span class="emoji-wrap" class:list={[{ "emoji-flex": flex }]}>
     {
-        data.isSchool && (
+        data.tags.includes("school") && (
             <span class="emoji-place" title="School related">
-                {isSchool}
+                {isSchoolIco}
             </span>
         )
     }
     {
-        data.isDev && (
+        data.tags.includes("dev") && (
             <span class="emoji-place" title="Dev related">
-                {isDev}
+                {isDevIco}
             </span>
         )
     }
     {
-        data.isWork && (
+        data.tags.includes("job") && (
             <span class="emoji-place" title="Work related">
-                {isWork}
+                {isWorkIco}
             </span>
         )
     }
     {
-        data.isThought && (
+        data.tags.includes("thought") && (
             <span class="emoji-place" title="A thought">
-                {isThought}
+                {isThoughtIco}
             </span>
         )
     }
     {
-        data.isEvent && (
+        data.tags.includes("event") && (
             <span class="emoji-place" title="An event">
-                {isEvent}
+                {isEventIco}
             </span>
         )
     }

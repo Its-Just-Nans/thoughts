@@ -8,6 +8,7 @@ let idx = 0;
 const g = () => {
     return project[idx++]; // crash if wrong
 };
+const ariaHome = "a hidden link to the home page - h for home";
 ---
 
 <h1 class="title">
@@ -18,7 +19,9 @@ const g = () => {
         title="main website"
         aria-label="webpage title is hiding a link to main website">{g()}</a
     >
-    <span class="link-title">{g()}</span>
+    <a class="link-title" href="/" aria-label={ariaHome}>
+        {g()}
+    </a>
     <a
         class="link-title"
         href={rss}
@@ -26,7 +29,11 @@ const g = () => {
         title="rss feed"
         aria-label="webpage title is hiding a link to rss feed">{g() + g()}</a
     >
-    <span class="link-title">{g() + g() + g()}</span>
+    <span class="link-title">{g()}</span>
+    <a class="link-title" href="/" aria-label={ariaHome}>
+        {g()}
+    </a>
+    <span class="link-title">{g()}</span>
     <a
         class="link-title"
         href={repo}

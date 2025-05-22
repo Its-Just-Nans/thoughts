@@ -47,3 +47,15 @@ export const getEntrySlug = (post: CollectionEntry<"post">): string => {
     }
     return post.slug;
 };
+
+export const getAllTags = (posts: CollectionEntry<"post">[]): string[] => {
+    const tags = new Set<string>();
+    posts.forEach((post) => {
+        if (post.data.tags) {
+            post.data.tags.forEach((tag) => {
+                tags.add(tag);
+            });
+        }
+    });
+    return Array.from(tags);
+};
