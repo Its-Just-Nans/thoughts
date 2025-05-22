@@ -71,5 +71,37 @@
             "lng": -96.83757841587067
         },
         "name": "Bouldering Project"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.74790432066559,
+            "lng": -97.32605695724489
+        },
+        "name": "Fort Worth Water Gardens"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.74332473510905,
+            "lng": -97.36882209777833
+        },
+        "name": "Cowgirl Museum"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.84234912843718,
+            "lng": -96.83539509773256
+        },
+        "name": "Flight Museum"
+    },
+    {
+        "type": "place",
+        "coords": {
+            "lat": 32.7888709803939,
+            "lng": -97.3463559150696
+        },
+        "name": "Stock Yards"
     }
 ]
