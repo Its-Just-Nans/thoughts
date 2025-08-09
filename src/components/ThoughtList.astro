@@ -8,10 +8,7 @@ interface Props {
     showEmoji?: boolean;
 }
 
-const { data, absSlug = false, showEmoji = false } = Astro.props;
-const style = `ul .article {
-                display: var(--original-display);
-            }`;
+const { data, showEmoji = false } = Astro.props;
 ---
 
 <ul class="emoji-controller" class:list={[{ "hide-emoji": !showEmoji }]}>

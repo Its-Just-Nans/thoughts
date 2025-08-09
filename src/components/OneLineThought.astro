@@ -15,7 +15,7 @@ const slug = getEntrySlug(post);
 const trailingSlashSlug = slug.endsWith("/") ? slug : `${slug}/`;
 const href = absSlug ? `/${trailingSlashSlug}` : `${trailingSlashSlug}`;
 const { draft } = post.data;
-const { title, publishDate } = post.data;
+const { title, publishDate, noDate } = post.data;
 const tagsClass = post.data.tags.map((tag) => `tag-${tag}`);
 
 const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -26,7 +26,7 @@ const removeAccents = (str: string) => str.normalize("NFD").replace(/[\u0300-\u0
         <div class="link-wrap">
             {draft && <span class="draft">draft</span>}
             <span class="date">
-                <Time date={publishDate} />
+                {(noDate && "null") || <Time date={publishDate} />}
             </span>
             <span class="link-dash">-</span>
             <span class="link-title">{removeAccents(title)}</span>

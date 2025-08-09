@@ -27,6 +27,12 @@ export const filterHidden = (posts: CollectionEntry<"post">[], value = false): C
 
 export function sortMDByDate(posts: CollectionEntry<"post">[], useUpdatedDate = false): CollectionEntry<"post">[] {
     return posts.sort((a, b) => {
+        if (a.data.noDate) {
+            return 1;
+        }
+        if (b.data.noDate) {
+            return -1;
+        }
         const aDate = new Date(
             useUpdatedDate ? (a.data.updatedDate ?? a.data.publishDate) : a.data.publishDate
         ).valueOf();

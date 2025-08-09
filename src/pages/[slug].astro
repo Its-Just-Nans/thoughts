@@ -23,8 +23,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry, data } = Astro.props;
 const { Content } = await entry.render();
-const title = data.title;
-const date = new Date(data.publishDate);
+const { publishDate, title, noDate } = data;
 ---
 
 <Layout title={data.title} description={`thoughts about ${title.toLowerCase()}`} `>
@@ -34,7 +33,7 @@ const date = new Date(data.publishDate);
             <a class="back-link" href="../"> 🔙 </a>
             <span>
                 <Emoji data={data} />
-                <span><Time date={date} /></span>
+                <span>{(noDate && "null") || <Time date={publishDate} />}</span>
                 {
                     data.updatedDate && (
                         <span class="updated" data-tooltip="updated date">

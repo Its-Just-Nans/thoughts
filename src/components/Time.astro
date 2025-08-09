@@ -7,6 +7,7 @@ interface Props {
 const { date, className } = Astro.props;
 
 const fmt = date.toISOString().split("T")[0];
+const datetime = date.toISOString();
 ---
 
-<time class={className} datetime={date.toISOString()}>{fmt}</time>
+<time class={className} datetime={datetime}>{fmt}</time>

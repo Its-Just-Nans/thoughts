@@ -39,6 +39,7 @@ const post = defineCollection({
                     alt: z.string(),
                 })
                 .optional(),
+            noDate: z.boolean().default(false),
             draft: z.boolean().default(false),
             hidden: z.boolean().default(false),
             tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase).transform(assertOrder),
