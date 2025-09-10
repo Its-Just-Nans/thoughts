@@ -1,6 +1,7 @@
 import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
 import { filterHidden, getAllPosts, getEntrySlug, sortMDByDate } from "../utils/posts";
+import { thisWebsite } from "../utils/constants";
 
 export async function GET(context: APIContext) {
     const allPosts = filterHidden(await getAllPosts());
@@ -19,7 +20,7 @@ export async function GET(context: APIContext) {
     return rss({
         title: "Thoughts of n4n5",
         description: "RSS feed for thoughts by n4n5",
-        site: context.site || new URL("https://thoughts.n4n5.dev"),
+        site: context.site || new URL(thisWebsite),
         items: allPostsByDate.map((post) => {
             const { updatedDate, publishDate } = post.data;
             const pubDate = updatedDate ?? publishDate;

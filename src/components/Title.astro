@@ -1,7 +1,5 @@
 ---
-const project = "thoughts";
-const site = "https://n4n5.dev";
-const repo = `https://github.com/Its-Just-Nans/${project}`;
+import { project, website, repo } from "../utils/constants";
 const rss = `/rss.xml`;
 
 let idx = 0;
@@ -14,7 +12,7 @@ const ariaHome = "a hidden link to the home page - h for home";
 <h1 class="title">
     <a
         class="link-title"
-        href={site}
+        href={website}
         target="_blank"
         title="main website"
         aria-label="webpage title is hiding a link to main website">{g()}</a

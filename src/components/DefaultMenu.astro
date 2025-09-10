@@ -1,5 +1,6 @@
 ---
-import { isSchoolIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/menus";
+import { domain, website } from "../utils/constants";
+import { isSchoolIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/constants";
 import GithubIcon from "./GithubIcon.astro";
 const menus = [
     [
@@ -84,15 +85,15 @@ const menus = [
     [
         {
             ico: "🐢",
-            title: "n4n5.dev",
-            id: "n4n5-dev",
-            link: "https://n4n5.dev",
+            title: domain,
+            id: "website-link",
+            link: website,
             subtitle: null,
             func: null,
         },
         {
             ico: "📦",
-            link: "https://n4n5.dev/packages",
+            link: `${website}/packages`,
             title: "Packages",
             subtitle: null,
         },
