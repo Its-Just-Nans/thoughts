@@ -1,10 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import CentralBody from "../../components/CentralBody.astro";
-import { filterHidden, getAllPosts, getAllTags, sortMDByDate } from "../../utils/posts";
-import TitleDiv from "../../components/TitleDiv.astro";
-import ThoughtList from "../../components/ThoughtList.astro";
-import TagDisplay from "../../components/TagDisplay.astro";
+import Layout from "@layouts/Layout.astro";
+import CentralBody from "@components/CentralBody.astro";
+import { filterHidden, getAllPosts, getAllTags, sortMDByDate } from "@utils/posts";
+import TitleDiv from "@components/TitleDiv.astro";
+import ThoughtList from "@components/ThoughtList.astro";
+import TagDisplay from "@components/TagDisplay.astro";
 
 export async function getStaticPaths() {
     const data = sortMDByDate(filterHidden(await getAllPosts()));

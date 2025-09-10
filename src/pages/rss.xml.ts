@@ -1,7 +1,7 @@
 import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
-import { filterHidden, getAllPosts, getEntrySlug, sortMDByDate } from "../utils/posts";
-import { thisWebsite } from "../utils/constants";
+import { filterHidden, getAllPosts, getEntrySlug, sortMDByDate } from "@utils/posts";
+import { thisWebsite } from "@utils/constants";
 
 export async function GET(context: APIContext) {
     const allPosts = filterHidden(await getAllPosts());

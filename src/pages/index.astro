@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import RightClickMenu from "../components/RightClickMenu.astro";
-import CentralBody from "../components/CentralBody.astro";
-import { getAllPosts, filterHidden, sortMDByDate, getAllTags } from "../utils/posts";
-import DefaultMenu from "../components/DefaultMenu.astro";
-import TitleDiv from "../components/TitleDiv.astro";
-import ThoughtList from "../components/ThoughtList.astro";
-import AllTags from "../components/AllTags.astro";
+import Layout from "@layouts/Layout.astro";
+import RightClickMenu from "@components/RightClickMenu.astro";
+import CentralBody from "@components/CentralBody.astro";
+import { getAllPosts, filterHidden, sortMDByDate, getAllTags } from "@utils/posts";
+import DefaultMenu from "@components/DefaultMenu.astro";
+import TitleDiv from "@components/TitleDiv.astro";
+import ThoughtList from "@components/ThoughtList.astro";
+import AllTags from "@components/AllTags.astro";
 
 const data = sortMDByDate(filterHidden(await getAllPosts()));
 const tags = getAllTags(data);

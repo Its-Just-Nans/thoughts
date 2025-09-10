@@ -1,12 +1,12 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
-import Layout from "../layouts/Layout.astro";
-import { getAllPosts, getEntrySlug } from "../utils/posts";
+import Layout from "@layouts/Layout.astro";
+import { getAllPosts, getEntrySlug } from "@utils/posts";
 import "../styles/markdown.css";
 import "../styles/tooltip.css";
-import Emoji from "../components/Emoji.astro";
-import Time from "../components/Time.astro";
+import Emoji from "@components/Emoji.astro";
+import Time from "@components/Time.astro";
 
 export const getStaticPaths = (async () => {
     const articles = await getAllPosts();

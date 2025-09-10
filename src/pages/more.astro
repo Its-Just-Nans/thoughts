@@ -1,7 +1,7 @@
 ---
-import OneLineThought from "../components/OneLineThought.astro";
-import Layout from "../layouts/Layout.astro";
-import { filterHidden, getAllPosts } from "../utils/posts";
+import OneLineThought from "@components/OneLineThought.astro";
+import Layout from "@layouts/Layout.astro";
+import { filterHidden, getAllPosts } from "@utils/posts";
 
 const data = filterHidden(await getAllPosts(), true);
 ---
