@@ -1,5 +1,5 @@
 ---
-import { isSchoolIco, isDevIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/menus";
+import { isSchoolIco, isWorkIco, isThoughtIco, isEventIco } from "../utils/menus";
 import GithubIcon from "./GithubIcon.astro";
 const menus = [
     [
@@ -28,21 +28,6 @@ const menus = [
             subtitle: null,
             func: () => {
                 const el = document.getElementById("isSchool") as HTMLInputElement;
-                if (el.checked) {
-                    (document.getElementById("isAll") as HTMLInputElement).checked = true;
-                } else {
-                    el.checked = true;
-                }
-            },
-        },
-        {
-            ico: isDevIco,
-            id: "only-dev",
-            link: null,
-            title: "only dev",
-            subtitle: null,
-            func: () => {
-                const el = document.getElementById("isDev") as HTMLInputElement;
                 if (el.checked) {
                     (document.getElementById("isAll") as HTMLInputElement).checked = true;
                 } else {
