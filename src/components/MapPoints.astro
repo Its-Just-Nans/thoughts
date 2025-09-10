@@ -6,11 +6,12 @@ interface Props {
     height?: number;
     zoom?: number;
     view: [number, number];
+    mapId?: string;
 }
 
 const franceView = [46.446, 2.903];
 
-const { points, height, zoom = 4, view = franceView } = Astro.props;
+const { points, height, zoom = 4, view = franceView, mapId = "map" } = Astro.props;
 ---
 
 <link
@@ -25,13 +26,13 @@ const { points, height, zoom = 4, view = franceView } = Astro.props;
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
-<div id="map"></div>
+<div id={mapId}></div>
 
-<script is:inline define:vars={{ points, height, zoom, view }}>
+<script is:inline define:vars={{ points, height, zoom, view, mapId }}>
     if (height) {
-        document.getElementById("map").style.height = `${height}px`;
+        document.getElementById(mapId).style.height = `${height}px`;
     }
-    var map = L.map("map");
+    var map = L.map(mapId);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
