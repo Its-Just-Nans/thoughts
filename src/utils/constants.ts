@@ -1,7 +1,6 @@
 export const isSchoolIco = "👨‍🎓";
 export const isWorkIco = "💼";
 export const isThoughtIco = "💭";
-export const isEventIco = "🎟️";
 
 export const project = "thoughts";
 export const domain = "n4n5.dev";

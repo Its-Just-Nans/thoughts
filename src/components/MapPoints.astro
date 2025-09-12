@@ -29,10 +29,11 @@ const { points, height, zoom = 4, view = franceView, mapId = "map" } = Astro.pro
 <div id={mapId}></div>
 
 <script is:inline define:vars={{ points, height, zoom, view, mapId }}>
+    let mapIdRef = mapId;
     if (height) {
-        document.getElementById(mapId).style.height = `${height}px`;
+        document.getElementById(mapIdRef).style.height = `${height}px`;
     }
-    var map = L.map(mapId);
+    var map = L.map(mapIdRef);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);

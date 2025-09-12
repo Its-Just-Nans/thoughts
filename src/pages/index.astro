@@ -19,11 +19,10 @@ const tags = getAllTags(data);
             data.length > 0 && (
                 <div>
                     <section>
-                        <input id="isAll" name="selector" class="selector" type="radio" value="all" checked />
+                        <input id="isAll" name="selector" class="selector" type="radio" value="all" />
                         <input id="isWork" name="selector" class="selector" type="radio" value="work" />
                         <input id="isSchool" name="selector" class="selector" type="radio" value="school" />
-                        <input id="isThought" name="selector" class="selector" type="radio" value="thought" />
-                        <input id="isEvent" name="selector" class="selector" type="radio" value="event" />
+                        <input id="isThought" name="selector" class="selector" type="radio" value="thought" checked />
                         <ThoughtList data={data} />
                         <AllTags tags={tags} />
                     </section>
@@ -48,9 +47,6 @@ const tags = getAllTags(data);
         display: var(--original-display);
     }
     :global(#isThought:checked ~ ul .tag-thought) {
-        display: var(--original-display);
-    }
-    :global(#isEvent:checked ~ ul .tag-event) {
         display: var(--original-display);
     }
     :global(#isSchool:checked ~ ul .tag-thought) {

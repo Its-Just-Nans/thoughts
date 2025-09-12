@@ -1,6 +1,6 @@
 ---
 import type { InferEntrySchema } from "astro:content";
-import { isSchoolIco, isWorkIco, isThoughtIco, isEventIco } from "@utils/constants";
+import { isSchoolIco, isWorkIco, isThoughtIco } from "@utils/constants";
 
 interface Props {
     data: InferEntrySchema<"post">;
@@ -29,13 +29,6 @@ const { data, flex = false } = Astro.props;
         data.tags.includes("thought") && (
             <span class="emoji-place" title="A thought">
                 {isThoughtIco}
-            </span>
-        )
-    }
-    {
-        data.tags.includes("event") && (
-            <span class="emoji-place" title="An event">
-                {isEventIco}
             </span>
         )
     }

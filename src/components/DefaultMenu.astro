@@ -1,6 +1,6 @@
 ---
 import { domain, website } from "@utils/constants";
-import { isSchoolIco, isWorkIco, isThoughtIco, isEventIco } from "@utils/constants";
+// import { isSchoolIco, isWorkIco, isThoughtIco } from "@utils/constants";
 import GithubIcon from "./GithubIcon.astro";
 const menus = [
     [
@@ -20,68 +20,53 @@ const menus = [
             },
         },
     ],
-    [
-        {
-            ico: isSchoolIco,
-            title: "only study",
-            id: "only-study",
-            link: null,
-            subtitle: null,
-            func: () => {
-                const el = document.getElementById("isSchool") as HTMLInputElement;
-                if (el.checked) {
-                    (document.getElementById("isAll") as HTMLInputElement).checked = true;
-                } else {
-                    el.checked = true;
-                }
-            },
-        },
-        {
-            ico: isWorkIco,
-            title: "only work",
-            id: "only-work",
-            link: null,
-            subtitle: null,
-            func: () => {
-                const el = document.getElementById("isWork") as HTMLInputElement;
-                if (el.checked) {
-                    (document.getElementById("isAll") as HTMLInputElement).checked = true;
-                } else {
-                    el.checked = true;
-                }
-            },
-        },
-        {
-            ico: isThoughtIco,
-            title: "only thoughts",
-            id: "only-thoughts",
-            link: null,
-            subtitle: null,
-            func: () => {
-                const el = document.getElementById("isThought") as HTMLInputElement;
-                if (el.checked) {
-                    (document.getElementById("isAll") as HTMLInputElement).checked = true;
-                } else {
-                    el.checked = true;
-                }
-            },
-        },
-        {
-            ico: isEventIco,
-            title: "only events",
-            id: "only-events",
-            link: null,
-            subtitle: null,
-            func: () => {
-                const el = document.getElementById("isEvent") as HTMLInputElement;
-                if (el.checked) {
-                    (document.getElementById("isAll") as HTMLInputElement).checked = true;
-                } else {
-                    el.checked = true;
-                }
-            },
-        },
-    ],
+    // [
+    //     {
+    //         ico: isSchoolIco,
+    //         title: "only study",
+    //         id: "only-study",
+    //         link: null,
+    //         subtitle: null,
+    //         func: () => {
+    //             const el = document.getElementById("isSchool") as HTMLInputElement;
+    //             if (el.checked) {
+    //                 (document.getElementById("isAll") as HTMLInputElement).checked = true;
+    //             } else {
+    //                 el.checked = true;
+    //             }
+    //         },
+    //     },
+    //     {
+    //         ico: isWorkIco,
+    //         title: "only work",
+    //         id: "only-work",
+    //         link: null,
+    //         subtitle: null,
+    //         func: () => {
+    //             const el = document.getElementById("isWork") as HTMLInputElement;
+    //             if (el.checked) {
+    //                 (document.getElementById("isAll") as HTMLInputElement).checked = true;
+    //             } else {
+    //                 el.checked = true;
+    //             }
+    //         },
+    //     },
+    //     {
+    //         ico: isThoughtIco,
+    //         title: "only thoughts",
+    //         id: "only-thoughts",
+    //         link: null,
+    //         subtitle: null,
+    //         func: () => {
+    //             const el = document.getElementById("isThought") as HTMLInputElement;
+    //             if (el.checked) {
+    //                 (document.getElementById("isAll") as HTMLInputElement).checked = true;
+    //             } else {
+    //                 el.checked = true;
+    //             }
+    //         },
+    //     },
+    // ],
     [
         {
             ico: "🐢",
