@@ -20,9 +20,13 @@ export const CustomStyle = () => {
             .quote p {
                 text-align: right;
             }
-            summary pre {
+            .quote summary pre {
                 margin-bottom: 0px !important;
                 padding: 8px !important;
+            }
+            .quote summary pre code {
+                white-space: pre-wrap;
+                word-wrap: break-word !important;
             }
             `}
         </style>
@@ -34,6 +38,7 @@ export const CustomStyle = () => {
 
 
 import { Code } from "astro/components";
+import Center from "@components/Center.astro"
 
 export const Quote = ({ author = "", quote = "", children = null }) => {
     return (
@@ -75,7 +80,9 @@ export const Quote = ({ author = "", quote = "", children = null }) => {
 import ImgBrad from "./be_who_you_needed.png"
 
 <Quote quote="Be who you needed when you were younger." author="Brad Montague">
-    <img src={ImgBrad.src} width="50%" alt="Be who you needed when you were younger - Brad Montague" />
+    <Center>
+        <img src={ImgBrad.src} width="50%" alt="Be who you needed when you were younger - Brad Montague" />
+    </Center>
 </Quote>
 
 <Quote quote="It doesn't matter who we are. What matters is our plan" author="Bane - The Dark Knight Rises - 2012" />
