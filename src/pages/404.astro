@@ -7,14 +7,15 @@ import Layout from "@layouts/Layout.astro";
         <div>
             <p>404 Page Not found</p>
             <p>
-                Redirecting to <span class="redirection">/</span> in <span class="countdown">3</span>s
+                Redirecting to <span class="redirection">/</span> in <span class="countdown"></span>s
             </p>
         </div>
     </div>
     <script>
-        let countdown = 3;
         const redirect = document.querySelector(".redirection")!;
         const count = document.querySelector(".countdown")!;
+        let countdown = 10;
+        count.innerHTML = countdown.toString();
         redirect.innerHTML = window.location.origin;
         setInterval(() => {
             countdown -= 1;
