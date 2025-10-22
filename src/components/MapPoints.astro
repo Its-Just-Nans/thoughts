@@ -1,5 +1,6 @@
 ---
 import type { PointsType } from "../types";
+import MapScript from "./MapScript.astro";
 
 interface Props {
     points: PointsType;
@@ -14,18 +15,7 @@ const franceView = [46.446, 2.903];
 const { points, height, zoom = 4, view = franceView, mapId = "map" } = Astro.props;
 ---
 
-<link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-/>
-<script
-    is:inline
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-
+<MapScript />
 <div id={mapId}></div>
 
 <script is:inline define:vars={{ points, height, zoom, view, mapId }}>

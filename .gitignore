@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 .vscode/
+
+public/styles/leaflet.*
+public/styles/images/
