@@ -1,27 +1,7 @@
 ---
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
-import { basename, dirname, join } from "node:path";
+import { downloadScript } from "@utils/utils";
 
-export const downloadScript = async (files: { [ke: string]: string }) => {
-    Object.entries(files).map(async ([url, output]) => {
-        const outputDir = join("public/styles", dirname(output));
-        if (!existsSync(outputDir)) {
-            mkdirSync(outputDir);
-        }
-        const outputFile = join(outputDir, basename(output));
-        if (!existsSync(outputFile)) {
-            const file = await fetch(url).catch((e) => {
-                throw e;
-            });
-            const content = await file.arrayBuffer().catch((e) => {
-                throw e;
-            });
-            writeFileSync(outputFile, Buffer.from(content));
-        }
-    });
-};
-
-downloadScript({
+await downloadScript({
     "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css": "leaflet.css",
     "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js": "leaflet.js",
     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png": "images/marker-icon.png",
