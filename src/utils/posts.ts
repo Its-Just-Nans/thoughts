@@ -63,5 +63,6 @@ export const getAllTags = (posts: CollectionEntry<"post">[]): string[] => {
             });
         }
     });
+    tags.delete("thought"); // basic one
     return Array.from(tags);
 };
